@@ -1,0 +1,334 @@
+http://www.gamefaqs.com/portable/gbadvance/file/561612/21200
+
+Dungeons & Dragons Eye of the Beholder: Item List by muddynick
+Version 0.2, Last Updated 2003-01-21 View/Download Original File Hosted by GameFAQs
+Return to Dungeons & Dragons Eye of the Beholder (GBA) FAQs & Guides 
+Liked this FAQ? Click to recommend it to other GameFAQs users.                     
+                     ---------------------
+                            D & D
+                      Eye of the Beholder
+                     ---------------------
+                          Item List
+
+                   Devoloped by: Infogrames
+              for the Nintendo Game Boy Advance
+                         
+                    
+                       List created by:
+                          muddynick
+                    (muddynick@hotmail.com)
+                 Copyright (C) 2003 muddynick
+                         
+                          Version 0.2
+                     Last Update: 1/21/03
+
+________________________________________________________________
+================================================================
+
+*** Table of Contents ***
+
+I. Weapons
+     A. Simple Weapons
+          1. Tiny
+          2. Small
+          3. Medium
+          4. Large
+          5. Ranged
+               a. Small
+               b. Medium
+     B. Martial Weapons
+          1. Small
+          2. Medium
+          3. Large
+          4. Ranged
+               a. Medium
+               b. Large
+     C. Exotic Weapons
+          1. Tiny
+          2. Small
+          3. Medium
+          4. Large
+          5. Ranged
+               a. Tiny
+               b. Small
+               c. Medium
+II. Armor
+     A. Light Armor
+     B. Medium Armor
+     C. Heavy Armor
+     D. Shields
+III. Wands
+IV. Scrolls
+V. Potions
+VI. Version History / Reference
+VII. Special Thanks
+VIII. Copyright Info / Contact
+
+_________________________________________________________________
+=================================================================
+
+
+============
+I. Weapons
+============
+     Explanation of Critical - When attacking the game randomly 
+rolls a number between 1 and 20. On a weapon listed as 1-6 Damage 
+19-20 / 2x Critical: if the game rolls a 19 or 20 it's a critical
+hit. The 2x stands as the damage on the critical hit will be two
+times normal damage or 2-12 in this example.
+     
+     Weapon Bonus(+) - If a weapon has a +, this will affect both
+your hitting % and amount of damage caused, but does not affect
+the range of critical hits. An example would be a Dagger +1 would
+now be 2-5 damage.
+
+     *****************
+     A. Simple Weapons
+     *****************
+
+          1. Tiny (simple)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Dagger         1-4        19-20 / 2x     10 feet        Pierce
+
+          2. Small (simple)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Light Mace     1-6          20 / 2x                     Blunt
+
+          3. Medium (simple)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Club           1-6          20 / 2x      10 feet        Blunt
+Halfspear      1-6          20 / 3x      20 feet        Pierce
+Heavy Mace     1-8          20 / 2x                     Blunt
+Morningstar    1-8          20 / 2x                   Blunt/Pierce
+
+          4. Large (simple)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Shortspear     1-8          20 / 3x      20 feet        Pierce
+
+
+          5. Ranged (simple)
+
+               a. Small Ranged
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Light X-Bow    1-8        19-20 / 2x     80 feet        Pierce
+Dart           1-4         20 / 2x       20 feet        Pierce
+Sling          1-4         20 / 2x       50 feet        Blunt
+
+               b. Medium Ranged
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Heavy X-Bow    1-10       19-20 / 2x     120 feet       Pierce
+
+     
+     ******************
+     B. Martial Weapons
+     ******************
+
+          1. Small (martial)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Short Sword    1-6        19-20 / 2x                    Pierce
+Light Hammer   1-4         20 / 2x       20 feet        Blunt
+Handaxe        1-6         20 / 3x                      Slash
+Light Pick     1-4         20 / 4x                      Pierce
+          
+          2. Medium (martial)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Battleaxe      1-8         20 / 3x                      Slash
+Heavy Pick     1-6         20 / 4x                      Pierce
+Light Flail    1-8         20 / 2x                      Blunt
+Long Sword     1-8        19-20 / 2x                    Slash
+Rapier         1-6        18-20 / 2x                    Pierce
+Scimitar       1-6        18-20 / 2x                    Slash
+Trident        1-8         20 / 2x       10 feet        Pierce
+War Hammer     1-8         20 / 3x                      Blunt
+          
+          3. Large (martial)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Falchion       2-8        18-20 / 2x                    Slash
+Heavy Flail    1-10       19-20 / 2x                    Blunt
+Great Axe      1-12        20 / 3x                      Slash
+Great Club     1-10        20 / 2x                      Blunt
+Great Sword    2-12       19-20 / 2x                    Slash
+
+          4. Ranged (martial)
+
+               a. Medium Ranged
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Short bow      1-6          20 / 3x      60 feet        Pierce
+Composite      1-6          20 / 3x      70 feet        Pierce           
+   Shortbow
+
+               b. Large Ranged
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Long Bow       1-8          20 / 3x      100 feet       Pierce
+Composite      1-8          20 / 3x      110 feet       Pierce
+   Longbow
+
+
+     *****************
+     C. Exotic Weapons
+     *****************
+
+          1. Tiny (exotic)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Kukri          1-4        18-20 / 2x                    Slash
+
+          2. Small (exotic)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+
+
+          3. Medium (exotic)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Bastard Sword  1-10       19-20 / 2x                    Slash
+
+          4. Large (exotic)
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+
+
+          5. Ranged (exotic)
+
+               a. Tiny Ranged
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+Hand X-Bow     1-4        19-20 / 2x     30 feet        Pierce
+
+               b. Small Ranged
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+
+               c. Medium Ranged
+------------------------------------------------------------------
+*Weapon*     *Damage*     *Critical*     *Range*     *Damage Type*
+
+
+============
+II. Armor
+============
+     
+     A. Light Armor - All Light Armor movement is 30 feet/turn.
+-------------------------------------------------------------------
+     *TYPE*      *AC BONUS*     *Max Dex Bonus*     *Spell Failure*
+Padded               +1                +8                 5%
+Leather              +2                +6                10%
+Studded Leather      +3                +5                15%
+Chain Shirt          +4                +4                20%
+
+
+     B. Medium Armor - All Medium Armor movement is 20 feet/turn.
+-------------------------------------------------------------------
+     *TYPE*      *AC BONUS*     *Max Dex Bonus*     *Spell Failure*
+Hide                 +3                +4                20%
+Scale Mail           +4                +3                25%
+Chain Mail           +5                +2                30%
+Breastplate          +5                +3                25%
+
+
+     C. Heavy Armor - All Heavy Armor movement is 20 feet/turn.
+-------------------------------------------------------------------
+     *TYPE*      *AC BONUS*     *Max Dex Bonus*     *Spell Failure*
+Splint Mail          +6                +0                40%
+Banded Mail          +6                +1                35%
+Half-Plate Mail      +7                +0                40%
+Full-Plate Mail      +8                +1                35%
+
+
+     D. Shields
+-------------------------------------------------------------------
+     *TYPE*      *AC BONUS*     *Spell Failure*
+Buckler              +1               5%
+Small Wooden         +1               5%
+Small Metal          +1               5%
+Large Wooden         +2               15%
+Large Metal          +2               15%
+
+
+
+==============
+III. Wands
+==============
+*under construction*
+
+
+==============
+IV. Scrolls
+==============
+
+Acid Arrow - (Melf's Acid Arrow)(Wizard) - Damage 2-8: Casts out an
+     arrow of acid. Ranged weapon stats aply to the spell hitting 
+     the enemy.
+
+Cure Lt Wnd (Cure Light Wounds)(Cleric) - Heal 1-8 Hps of targeted 
+     party member. Add +1 to max Hps heal/level of caster with a max
+     of +5. The range of this spell is within touch of the caster.
+
+Hold Person (Hold Person)(Cleric/Wizard) - Freezes the target in 
+     place for one round. He may not attack or defend himself. Casting
+     spells is still a possibity since it involves only mental work.
+
+L. Restore (Lesser Restoration)(Cleric) - Cures any stat drain(Strength,
+     etc) on a party member by 1-4 points or drain one of the enemies stats.
+
+
+==============
+V. Potions
+==============
+N. Poison (Netruelize Poison) - Cures one party member that has been poisoned
+
+Cure Lt Wnd (Cure Light Wounds) - (Cleric) - Heal 1-8 Hps of targeted party 
+     member.
+
+
+==================================
+VI. Version History /  Reference
+==================================
+
+0.1  1/17/03  Some Armor and Weapons added
+0.2  1/21/03  Some Scrolls and Potions added, Updated Weapons
+
+Reference
+---------
+* TSR Advanced Dungeons and Dragons 3rd Edition Player's Handbook
+
+=====================
+VII. Special Thanks
+=====================
+
+CJayC - For his fantastic site (www.gamefaqs.com)
+Infogrames - for their work on this game
+TSR - were do I start?
+P-Man & Mickey - also also wik
+
+================================
+VIII. Copyright Info / Contact
+================================
+This work is Copyright (C) 2003 muddynick. This guide may not be
+altered in any way unless done so by it's creator, muddynick. The 
+use of this guide on websites, in walkthrough's, or to in any way
+obtain money is strictly prohibited.
+
+
+Contact:
+--------
+     Still going back through the game. Hopefully I can get something
+     up in the wands section soon. If you know of an item I missed on 
+     my list feel free to email me.
+
+Email: muddynick@hotmail.com
+ 
+ Dungeons & Dragons Eye of the Beholder: Item List by muddynick
+Version 0.2, Last Updated 2003-01-21 View/Download Original File Hosted by GameFAQs
+Return to Dungeons & Dragons Eye of the Beholder (GBA) FAQs & Guides 

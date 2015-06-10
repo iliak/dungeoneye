@@ -1,0 +1,607 @@
+                      Eye of the Beholder 2 [FILE SPECS]
+                    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+---------------------------------------------------------------------
+Eye of the Beholder II hex list by
+Marc Rene Delhalle <delhalle@nmlab.informatik.fh-dortmund.de>
+for DIRTY LITTLE HELPER September 1996
+---------------------------------------------------------------------
+
+Character-Offsets:
+   1.    22
+   2.   367
+   3.   712
+   4.  1057
+   5.  1402
+   6.  1747
+
+First the character abilities (Offsets to the charcter's name) :
+
+If there are two offsets, the first one represents the actual value, the
+second one represents the normal value.
+
+ Offset            3Meaning
+DDDDDDDDDDDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+11/12              3Strength
+13/14              3Exceptional Strength (in percent)
+15/16              3Intelligence
+17/18              3Wisdom
+19/20              3Dexterity
+21/22              3Condition
+23/24              3Charisma
+25,26 / 27,28      3Hitpoints
+29                 3AC (as signed byte (80h = -1d)
+31                 3Race
+32                 3Class(es)
+33                 3Alignment
+34                 3Picture
+35                 3Meal  (in %, full=64h)
+36-38              3Levels of the Class(es)
+39-41, 43-45, 47-493Experience Points of the Class(es)
+65-214             3if available, learned Spells
+215-218            3Spells which can be learned (Tip: ff ff ff ff)
+219/220            31. Hand
+221/222            32. Hand
+223-250            3Inventory: Backpack (14 Items)
+253/254            3Armor
+255/256            3Bracers
+257/258            3Helm
+259/260            3Medaillon
+261/262            3Boots
+263-268            3Inventory: Belt (3 Items)
+269/270            3Ring 1
+271/272            3Ring 2
+
+
+ ZDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD?
+ 3 Class(es)                    3   Race                        3
+ CDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD4
+ 3 Fighter               - 00   3   Human     male    - 00      3
+ 3 Ranger                - 01   3   Human     female  - 01      3
+ 3 Paladin               - 02   3   Elf       male    - 02      3
+ 3 Mage                  - 03   3   Elf       female  - 03      3
+ 3 Cleric                - 04   3   Half-Elf  male    - 04      3
+ 3 Thief                 - 05   3   Half-Elf  female  - 05      3
+ 3 Fighter/Cleric        - 06   3   Dwarf     male    - 06      3
+ 3 Fighter/Thief         - 07   3   Dwarf     female  - 07      3
+ 3 Fighter/Mage          - 08   3   Gnome     male    - 08      3
+ 3 Fighter/Mage/Thief    - 09   3   Gnome     female  - 09      3
+ 3 Thief/Mage            - 0a   3   Halfling  male    - 0a      3
+ 3 Cleric/Thief          - 0b   3   Halfling  female  - 0b      3
+ 3 Fighter/Cleric/Mage   - 0c   3                               3
+ 3 Ranger/Cleric         - 0d   3                               3
+ 3 Cleric/Mage           - 0e   3                               3
+ @DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDADDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDY
+
+
+    00 00    -empty-
+    3d 00    2-handed Sword
+    bb 00    Adamantite Dart
+    36 00    Amulet
+    4b 00    Amulet
+    d1 00    Amulet
+    4a 01    Amulet
+    63 00    Amulet of Death
+    b1 01    Amulet of Death
+    5f 00    Amulet of Life
+    62 00    Amulet of Life
+    85 01    Amulet of Life
+    b0 01    Amulet of Life
+    97 01    Amulet of Resurrection
+    34 00    Arrow
+    f3 00    Arrow
+    f4 00    Arrow
+    ec 01    Arrow
+    ed 01    Arrow
+    ee 01    Arrow
+    ef 01    Arrow
+    f0 01    Arrow
+    f1 01    Arrow
+    f2 01    Arrow
+    f3 01    Arrow
+    f4 01    Arrow
+    f5 01    Arrow
+    f6 01    Arrow
+    f7 01    Arrow
+    f8 01    Arrow
+    f9 01    Arrow
+    fa 01    Arrow
+    fb 01    Arrow
+    fc 01    Arrow
+    fd 01    Arrow
+    fe 01    Arrow
+    ff 01    Arrow
+    00 02    Arrow
+    dd 00    Arrow +1
+    de 00    Arrow +1
+    4f 01    Arrow +1
+    50 01    Arrow +1
+    51 01    Arrow +1
+    52 01    Arrow +1
+    53 01    Arrow +1
+    e8 00    Arrow +2
+    e9 00    Arrow +2
+    ea 00    Arrow +2
+    eb 00    Arrow +2
+    ec 00    Arrow +2
+    ed 00    Arrow +2
+    ee 00    Arrow +2
+    ef 00    Arrow +2
+    16 00    Axe
+    d7 00    Axe
+    85 00    Axe "The Bait" +2
+    09 02    Axe +3
+    28 01    Axe -2, Cursed
+    58 00    Banded Armor
+    d4 01    Banded Armor
+    43 01    Banded Armor +2
+    ce 01    Banded Armor +3
+    46 00    Blue Gem
+    01 01    Blue Gem
+    82 01    Body Gem
+    21 00    Bone
+    40 00    Bone Key
+    3d 01    Bone Key
+    32 00    Bow
+    33 00    Bow
+    f0 00    Bow
+    35 00    Bracers of protection
+    d5 01    Bracers of protection
+    bc 01    Bracers of protection +2
+    49 01    Bracers of protection +3
+    0e 02    Bracers of protection +3
+    ce 00    Bracers of protection +5
+    67 01    Bracers of protection -2
+    90 01    Brahma's Boots +1
+    17 00    Chain Mail
+    c4 00    Chain Mail
+    7c 01    Chain Mail
+    0d 02    Chainmail
+    89 00    Cleric Holy Symbol
+    c4 01    Cleric Holy Symbol
+    fb 00    Cleric Scroll of Create Food
+    fc 00    Cleric Scroll of Create Food
+    ba 01    Cleric Scroll of Cure Serious Wounds
+    cb 01    Cleric Scroll of Cure Serious Wounds
+    cd 01    Cleric Scroll of Dispel Magic
+    73 00    Cleric Scroll of Neutralize Poison
+    8e 00    Cleric Scroll of Neutralize Poison
+    a5 00    Cleric Scroll of Neutralize Poison
+    75 00    Cleric Scroll of Raise Dead
+    e3 00    Cleric Scroll of Raise Dead
+    19 01    Cleric Scroll of Raise Dead
+    56 01    Cleric Scroll of Raise Dead
+    b6 01    Cleric Scroll of Raise Dead
+    c6 01    Cleric Scroll of Raise Dead
+    c7 01    Cleric Scroll of Raise Dead
+    e7 00    Cloak "Moonshade" +3
+    37 00    Cloak (magical)
+    5e 00    Coin
+    4e 01    Composite Bow
+    12 00    Copper Key
+    70 00    Copper Key
+    ff 00    Copper Key
+    17 01    Copper Key
+    2f 01    Copper Key
+    32 01    Copper Key
+    50 00    Crimson Key
+    89 01    Crimson Key
+    56 00    Crimson Ring
+    aa 01    Crimson Ring
+    ab 01    Crimson Ring
+    53 00    Crystal Hammer +2
+    6f 01    Crystal Hammer +2
+    4d 00    Crystal Key
+    8d 01    Crystal Key
+    04 00    Dagger
+    31 00    Dagger
+    6f 00    Dagger
+    bd 00    Dagger
+    c3 00    Dagger
+    64 01    Dagger
+    6b 01    Dagger
+    6c 01    Dagger
+    e3 01    Dagger
+    e4 01    Dagger
+    13 02    Dagger
+    14 02    Dagger
+    15 02    Dagger
+    b1 00    Dagger "Sa Shull" +2
+    7b 00    Dagger "Yargon" -2
+    be 00    Dagger +1
+    83 00    Dagger +2
+    06 02    Dagger +5
+    8b 00    Dark Moon Key
+    8d 00    Dark Moon Key
+    c6 00    Dark Moon Key
+    dc 00    Dark Moon Key
+    e1 00    Dark Moon Key
+    5b 01    Dark Moon Key
+    5c 01    Dark Moon Key
+    5d 01    Dark Moon Key
+    5e 01    Dark Moon Key
+    1e 00    Darkmoon Key
+    ba 00    Dart
+    bc 00    Dart
+    e5 01    Dart
+    e6 01    Dart
+    e8 01    Dart
+    e9 01    Dart
+    ea 01    Dart
+    eb 01    Dart
+    04 02    Dart
+    05 02    Dart
+    e7 01    Dart +2
+    e2 01    Dart +4
+    77 01    Dragon Skin Armor +4
+    b8 00    Drow Boots
+    9a 00    East Wind
+    4c 00    Eye of Talon
+    88 01    Eye of Talon
+    92 00    Femur
+    a9 00    Femur
+    aa 00    Femur
+    ae 00    Femur
+    b2 00    Femur
+    b3 00    Femur
+    c0 00    Femur
+    c2 00    Femur
+    1a 01    Femur
+    33 01    Femur
+    38 01    Femur
+    5f 01    Femur
+    63 01    Femur
+    65 01    Femur
+    66 01    Femur
+    73 01    Femur
+    7a 01    Femur
+    9f 01    Femur
+    a0 01    Femur
+    a2 01    Femur
+    a3 01    Femur
+    a4 01    Femur
+    3a 00    Flail
+    30 00    Glass Sphere
+    da 00    Glass Sphere
+    db 00    Glass Sphere
+    30 01    Glass Sphere
+    4b 01    Glass Sphere
+    4c 01    Glass Sphere
+    4d 01    Glass Sphere
+    45 00    Green Gem
+    02 01    Green Gem
+    11 00    Grey Key
+    8a 00    Grey Key
+    19 02    Grey Key
+    6e 01    Halberd +2
+    81 01    Heart Gem
+    23 00    Helmet
+    b7 00    Helmet
+    88 00    Helmet
+    c7 00    Helmet
+    bd 01    Helmet
+    d6 01    Helmet
+    02 02    Helmet
+    0f 02    Helmet
+    47 01    Helmet (blue)
+    98 00    Helmet +1
+    52 00    Hilt of Talon
+    9c 01    Hilt of Talon
+    08 00    Holy Symbol
+    2c 00    Horn
+    0a 00    Iron Rations
+    6d 00    Iron Rations
+    6e 00    Iron Rations
+    8c 00    Iron Rations
+    99 00    Iron Rations
+    d4 00    Iron Rations
+    d5 00    Iron Rations
+    d6 00    Iron Rations
+    08 01    Iron Rations
+    09 01    Iron Rations
+    0a 01    Iron Rations
+    0b 01    Iron Rations
+    0c 01    Iron Rations
+    0d 01    Iron Rations
+    0e 01    Iron Rations
+    0f 01    Iron Rations
+    2e 01    Iron Rations
+    71 01    Iron Rations
+    91 01    Jhonas' Cloak +2
+    55 00    Jhonas' Cloak +1
+    5d 00    Khelben's Coin
+    12 02    Khelben's Coin
+    01 00    Leather Armor
+    7d 00    Leather Armor +2
+    09 00    Leather Boots
+    87 00    Leather Boots
+    bf 00    Leather Boots
+    69 01    Leather Boots
+    d7 01    Leather Boots
+    10 02    Leather Boots
+    44 01    Leather Boots (blue)
+    be 01    Leather Boots (blue)
+    03 02    Leather Boots (blue)
+    06 00    Lockpicks
+    21 01    Lockpicks
+    11 02    Lockpicks
+    16 02    Lockpicks
+    0b 02    Long Bow
+    22 00    Long Sword
+    71 00    Long Sword
+    cd 00    Long Sword "Hath Kull" -2
+    2a 01    Long Sword "Hunger" -2, Cursed
+    97 00    Long Sword +1
+    b6 00    Long Sword +1
+    b9 01    Long Sword +4
+    b2 01    Long Sword +5
+    c5 00    Long Sword -2
+    7a 00    Long Sword -3
+    1a 00    Mace
+    75 01    Mace
+    79 00    Mace "Thumper" -2, Cursed
+    a2 00    Mace +1
+    cf 01    Mace +3
+    7f 00    Magic Dust
+    80 00    Magic Dust
+    81 00    Magic Dust
+    22 01    Magic Dust
+    25 01    Magic Dust
+    26 01    Magic Dust
+    7e 00    Magic Scroll of Blur
+    2c 01    Magic Scroll of Blur
+    a7 01    Magic Scroll of Cone of Cold
+    e4 00    Magic Scroll of Detect Magic
+    5a 01    Magic Scroll of Disintegrate
+    2d 01    Magic Scroll of Dispel Magic
+    ae 01    Magic Scroll of Fear
+    e6 00    Magic Scroll of Fireball
+    74 01    Magic Scroll of Fireball
+    9d 01    Magic Scroll of Flesh to Stone
+    d0 00    Magic Scroll of Haste
+    7e 01    Magic Scroll of Hold Monster
+    8f 01    Magic Scroll of Ice Storm
+    00 01    Magic Scroll of Improved Identify
+    83 01    Magic Scroll of Improved Identify
+    27 01    Magic Scroll of Invisibility
+    9b 01    Magic Scroll of Invisibility 10'
+    a4 00    Magic Scroll of Lightning Bolt
+    15 01    Magic Scroll of Lightning Bolt
+    f1 00    Magic Scroll of Remove Curse
+    e5 00    Magic Scroll of Shocking Grasp
+    8a 01    Magic Scroll of Stone to Flesh
+    f9 00    Magic Scroll of True Seeing
+    99 01    Magic Scroll of Wall of Force
+    49 00    Mantis Idol
+    31 01    Mantis Idol
+    48 00    Mantis Key
+    2b 01    Mantis Key
+    a8 01    Mapaj
+    5a 00    Necklace
+    77 00    North Wind
+    1b 00    Paladin's Holy Symbol
+    1c 01    Paladin's Holy Symbol
+    bf 01    Paladin's Holy Symbol
+    1c 00    Parchment
+    72 00    Parchment
+    78 00    Parchment
+    9b 00    Parchment
+    9c 00    Parchment
+    9d 00    Parchment
+    1e 01    Parchment
+    23 01    Parchment
+    54 01    Parchment
+    92 01    Parchment
+    24 00    Plate Mail
+    b5 00    Plate Mail
+    bb 01    Plate Mail
+    95 00    Plate Mail +2
+    46 01    Plate Mail +2
+    1f 01    Plate Mail +3
+    af 01    Plate Mail +3
+    5b 00    Polearm
+    35 01    Polearm
+    42 01    Polearm "Leech" -2, Cursed
+    4a 00    Polished Shield
+    7f 01    Polished Shield
+    86 01    Polished Shield
+    87 01    Polished Shield
+    93 01    Polished Shield
+    94 01    Polished Shield
+    95 01    Polished Shield
+    8f 00    Potion of Cure Poison
+    b4 00    Potion of Cure Poison
+    34 01    Potion of Cure Poison
+    3e 01    Potion of Cure Poison
+    3f 01    Potion of Cure Poison
+    40 01    Potion of Cure Poison
+    57 01    Potion of Cure Poison
+    58 01    Potion of Cure Poison
+    b7 01    Potion of Cure Poison
+    b8 01    Potion of Cure Poison
+    df 00    Potion of Extra Healing
+    12 01    Potion of Extra Healing
+    14 01    Potion of Extra Healing
+    55 01    Potion of Extra Healing
+    18 00    Potion of Giant Strength
+    b5 01    Potion of Giant Strength
+    c1 01    Potion of Giant Strength
+    9f 00    Potion of Healing
+    a0 00    Potion of Healing
+    c9 00    Potion of Healing
+    e0 00    Potion of Healing
+    11 01    Potion of Healing
+    48 01    Potion of Healing
+    60 01    Potion of Healing
+    61 01    Potion of Healing
+    62 01    Potion of Healing
+    6d 01    Potion of Healing
+    9e 00    Potion of Speed
+    c0 01    Potion of Speed
+    90 00    Potion of Vitality
+    13 01    Potion of Vitality
+    59 01    Potion of Vitality
+    47 00    Purple Gem
+    19 00    Rations
+    fd 00    Rations
+    fe 00    Rations
+    7b 01    Rations
+    17 02    Rations
+    18 02    Rations
+    44 00    Red Gem
+    03 01    Red Gem
+    3a 01    Red Gem
+    1d 01    Ring of Adornment
+    d0 01    Ring of Adornment
+    08 02    Ring of Adornment
+    2e 00    Ring of Adornment (blue)
+    2f 00    Ring of Adornment (green)
+    8e 01    Ring of Feather Fall
+    c2 01    Ring of Feather Fall
+    db 01    Ring of Feather Fall
+    59 00    Ring of protection
+    d1 01    Ring of protection +2
+    dc 01    Ring of protection +3
+    7d 01    Ring of Sustenance
+    c3 01    Ring of Sustenance
+    07 02    Ring of Wizardry
+    2d 00    Ring, red
+    02 00    Robe
+    68 01    Robe
+    84 00    Robe +1
+    d2 00    Robe +1
+    ac 01    Robe +2
+    01 02    Robe +5
+    10 00    Rock
+    64 00    Rock
+    65 00    Rock
+    66 00    Rock
+    67 00    Rock
+    68 00    Rock
+    69 00    Rock
+    6a 00    Rock
+    6b 00    Rock
+    6c 00    Rock
+    a1 00    Rock
+    ab 00    Rock
+    af 00    Rock
+    b0 00    Rock
+    f5 00    Rock
+    f6 00    Rock
+    f7 00    Rock
+    f8 00    Rock
+    96 01    Rock
+    a6 01    Rock
+    c9 01    Rock
+    d8 01    Rock
+    d9 01    Rock
+    da 01    Rock
+    d2 01    Rock +1
+    d3 01    Rock +1
+    c8 01    Rock +2
+    ca 01    Rock +2
+    7c 00    Rotten Food
+    3b 01    Rotten Food
+    3c 01    Rotten Food
+    72 01    Rotten Rations
+    f2 00    Rusty Dagger
+    38 00    Scale Mail
+    5c 00    Sceptre of Kingly Might
+    13 00    Set of Bones       (not resurrectable)
+    a6 00    Set of Dwarf Bones (Shorn, Male, Cleric, L8, 40 HP)
+    24 01    Set of Elf Bones   (Amber, Female, Thief/Mage, 7/7, 36 HP)
+    93 00    Set of Elf Bones   (San-Raal, Male, Mage, L8, 28 HP)
+    4e 00    Shell Key
+    84 01    Shell Key
+    8c 01    Shell Key
+    1f 00    Shield
+    20 00    Shield
+    36 01    Shield
+    45 01    Shield
+    96 00    Shield +1
+    c1 00    Shield +1
+    cf 00    Shield +1
+    70 01    Shield +3
+    b4 01    Shield +3
+    05 00    Short Sword
+    74 00    Short Sword
+    37 01    Short Sword
+    b3 01    Short Sword
+    cc 01    Short Sword
+    86 00    Short Sword "Sting" +2
+    76 01    Short Sword +2
+    41 01    Short Sword +3
+    0c 02    Short Sword +3
+    91 00    Skull
+    a3 00    Skull
+    a7 00    Skull
+    a8 00    Skull
+    ad 00    Skull
+    c8 00    Skull
+    ca 00    Skull
+    cc 00    Skull
+    1b 01    Skull
+    39 01    Skull
+    79 01    Skull
+    a1 01    Skull
+    a5 01    Skull
+    1d 00    Skull Key
+    82 00    Skull Key
+    25 00    Sling
+    76 00    Sling
+    98 01    Sling +1
+    80 01    Soul Gem
+    e2 00    South Wind
+    57 00    Spear
+    07 00    Spellbook
+    39 00    Spellbook
+    94 00    Spellbook
+    20 01    Spellbook
+    c5 01    Spellbook
+    dd 01    Spellbook
+    0a 02    Spellbook
+    26 00    Spider Key
+    ac 00    Spider Key
+    d3 00    Spider Key
+    d9 00    Spider Key
+    03 00    Staff
+    6a 01    Staff
+    cb 00    Staff +1
+    54 00    Starfire
+    8b 01    Starfire
+    61 00    Sticky Paper
+    ad 01    Sticky Paper
+    2a 00    Stone Cross
+    28 00    Stone Dagger
+    9a 01    Stone Dagger
+    27 00    Stone Gem
+    d8 00    Stone Gem
+    2b 00    Stone Medaillon
+    29 00    Stone Sphere
+    fa 00    Talon +4
+    51 00    Talon's Tongue
+    a9 01    The Shall Rejoice
+    4f 00    Tooth
+    9e 01    Tooth
+    04 01    Tropelet Seed
+    05 01    Tropelet Seed
+    06 01    Tropelet Seed
+    07 01    Tropelet Seed
+    41 00    Tuning Fork
+    10 01    Two-handed Sword
+    18 01    Two-handed Sword +2
+    78 01    Wand of Dispel Magic
+    df 01    Wand of Fireball
+    29 01    Wand of Lightning
+    de 01    Wand of Lightning
+    e0 01    Wand of Lightning
+    16 01    Wand of Magic Missile
+    3b 00    Wand of Stick
+    e1 01    Wand of Stick
+    60 00    Wand of Stick
+    b9 00    West Wind
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Dirty Little Helper v4.0b2 [Aug/97] - (c) 1997 by B.Wolffgramm & P.Lieven  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+

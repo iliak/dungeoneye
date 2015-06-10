@@ -1,0 +1,1045 @@
+Liked this FAQ? Click to recommend it to other GameFAQs users.
+
+                  __________________________________________
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+                                AD&D Rules FAQ
+
+             for every CRPG based on the 2nd Edition AD&D ruleset:
+
+   Baldur's Gate                          Gateway to the Savage Frontier
+   Baldur's Gate 2: Shadows of Amn        Hillsfar
+   Champions of Krynn                     Icewind Dale
+   Curse of the Azure Bonds               Menzoberranzen
+   Dark Queen of Krynn                    Planescape: Torment
+   Death Knights of Krynn                 Pool of Radiance
+   Descent to Undermountain               Pools of Darkness
+   Dungeon Hack                           Secret of the Silver Blades
+   Eye of the Beholder                    Treasures of the Savage Frontier
+   Eye of the Beholder 2                  Warriors of the Eternal Sun (Genesis)
+   Eye of the Beholder 3
+   ____________________________________________________________________________
+                  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
+                               January 17, 2005
+                                 Version  4.41
+
+                        Written by:  Dan Simpson
+                             Email:  dsimpson.faqs@gmail.com
+
+
+
+                                      Notes
+-------------------------------------------------------------------------------
+You will find the most up to date version of this FAQ at:
+
+  http://www.gamefaqs.com/
+  http://www.gamewinners.com/
+
+Having written a number of FAQs for AD&D games (Baldur's Gate, Baldur's Gate II
+Icewind Dale, and Planescape: Torment), I often get questions on the basics of 
+the ruleset.  What is THAC0?  What is AC?  How does magic work?  Since I've
+done so many different AD&D games, I didn't want to duplicate information in
+each one, and so I have created this file.  So the purpose of this document is
+to explain these concepts to people who aren't familiar with the AD&D ruleset.
+
+3rd Edition Note:  This document works mostly for the 2nd Edition ruleset.
+                   There are several upcoming 3rd Edition rules games -- namely
+                   Neverwinter Nights and Pool of Radiance II: Ruins of Myth
+                   Drannor.  These are not covered in this FAQ.  And in case
+                   you are curious, as of the 3rd Edition the "Advanced" in
+                   AD&D is being dropped.  Why?  The "basic" D&D is out of
+                   print, so there was nothing for AD&D to be "advanced" from.
+
+                   I also have a 3rd Edition D&D FAQ at GameFAQs.
+
+This document is divided up into a series of Articles, such as the first which
+is "Thac0 and Armor Class (AC)".
+-------------------------------------------------------------------------------
+
+___________________
+What's New in 4.41:
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+    Changed email addresses. Small changes to the format.
+
+  A complete version history can be found in the Final Words... section at the
+  end of the FAQ.
+
+
+-------------------------------------------------------------------------------
+Table of Contents
+-------------------------------------------------------------------------------
+
+  Articles
+
+    Ø.  Basic Concepts
+    1.  THAC0 and Armor Class (AC)
+    2.  Magic
+    3.  Levels
+    4.  Multiclassing and Dual Classing
+
+  Frequently Asked Questions
+
+  Final Words...
+
+
+-------------------------------------------------------------------------------
+Article Ø:  Basic Concepts
+-------------------------------------------------------------------------------
+
+  Dice = Everyone knows what dice are.  The most recognized form of dice is the
+         "D6" or the six sided die.  If you find a weapon that deals out 3d6
+         worth of Damage, then that means the weapon uses 3 six sided dice for
+         a Damage Range of 3 to 18.
+
+  +,-  = Throughout AD&D there are modifiers in both the positive and negative
+         directions.  Any + modifier improves a stat, any - modifier degrades
+         a stat.  Why is this distinction important?  Some stats are improved
+         by decreasing their number, THAC0 for instance.  If you find a +2
+         Sword, it improves your THAC0 by 2, which is actually a decrease in 
+         the overall THAC0 number.  If you had started with 20 you would get 
+         18.
+
+  Encumberance = The weight that your character is currently holding.  
+         Depending on how strong she is, she will be able to carry more things.
+         In AD&D when you carry close to your limit, you will move slower, and
+         if you go over your limit, you won't be able to move at all.  In
+         Baldur's Gate, you get the message "Encumbered - Cannnot move."  
+
+
+-------------------------------------------------------------------------------
+Article 1:  THAC0 and Armor Class (AC)
+-------------------------------------------------------------------------------
+
+  THAC0 = "To Hit Armor Class 0", of a 20 sided dice the number needed to hit 
+          an enemy with an AC of 0.  For example, if the THAC0 is 19, a roll of 
+          19 or higher is needed to hit an enemy with an AC of 0.  A roll of
+          1 is always a miss, and a roll of 20 is always a hit, called
+          CRITICAL MISS and CRITICAL HIT respectively.
+
+  AC    = Armor Class, roughly how difficult a figure is to hit.  AC starts 
+          with a base score of 10 and is improved by lowering the number.
+          Therefore a 0 AC is better than a 10, and a -10 is better still.
+
+  These two things are what determines when a hit (that scores damage) is made.
+  THAC0 is the offensive end of the roll, and AC is the defensive end of the
+  roll.
+
+  A successful hit is decided when the random roll is greater than the 
+  attacker's THAC0 - enemy AC.  If a 15 THAC0 Fighter attacks a 0 AC
+  goblin then you must roll 15 or greater. (The game itself usually does the
+  rolling for you, but it still follows these mechanics) Remember that a roll
+  of 20 will always hit.  So, even if the goblin's AC was -400, if you roll a 
+  20 you will still hit it.  If the goblin has 10 AC then you need only roll a 
+  5 or better, etc. (THAC0 - EnemyAC = 15 - 10 = 5)
+
+    Note: Just because you hit, that doesn't mean you'll deal damage. There is
+          the concept in second edition D&D of weapon immunities. Some monsters
+          require a certain type of weapon to be hit. Also, wizards can cast
+          spells such as "Protection from Magic Weapons" which makes them
+          temporarily immune to magic weapons. Baldur's Gate represents this by
+          having characters say "my weapon is useless" or something similar.
+
+  THAC0 Explained:
+  ----------------
+
+    THAC0 defaults at 20 and is gradually lowered when levels are gained.
+    Depending on the class (i.e. Fighter, Cleric, Mage) of the person involved
+    the THAC0 will decrease at different rates.  For a Fighter (or Ranger, or
+    Paladin) THAC0 decreases by a score of 1 per level.  A level 1 Fighter
+    starts at 20 THAC0, but by level 10 he is at 11. (He has gained 9 levels, 
+    and so loses 9 THAC0)  The lower the THAC0 the better, and there is no 
+    limit to how low it can go.
+
+    THAC0 Progression by Level & Class Chart:
+                                            Level
+      Group     1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16
+      -----     --------------------------------------------------------------
+      Warrior   20  19  18  17  16  15  14  13  12  11  10   9   8   7   6   5
+      Wizard    20  20  20  19  19  19  18  18  18  17  17  17  16  16  16  15
+      Priest    20  20  20  18  18  18  16  16  16  14  14  14  12  12  12  10
+      Rogue     20  20  19  19  18  18  17  17  16  16  15  15  14  14  13  13
+
+      Patterns
+      --------
+      Warrior   1 every level
+      Wizard    1 every 3 levels
+      Priest    2 every 3 levels
+      Rogue     1 every 2 levels
+
+    At this point we're still just referring to RAW THAC0, there are still
+    several things that modify it before it is used.  There are, in fact, four
+    main things that modify THAC0 from here:  Strength, Weapon, Special 
+    Effects, and Proficiency.  A super low strength score will raise your THAC0 
+    (which is bad), while super high Strengths will lower your THAC0 (which is 
+    good).
+
+    STRENGTH as a THAC0 modifier
+
+        STR     THAC0 Adj.                    STR      THAC0 Adj.
+         3         -3                          17         +1
+         4         -2                          18         +1
+         5         -2                        18/01-50     +1
+         6         -1                        18/51-75     +2
+         7         -1                        18/76-90     +2
+         8          0                        18/91-99     +2
+         9          0                        18/00        +3
+        10          0                          19         +3
+        11          0                          20         +3
+        12          0                          21         +4
+        13          0                          22         +4
+        14          0                          23         +5
+        15          0                          24         +6
+        16          0                          25         +7
+
+    Notice how any improvement in THAC0 is denoted by a +3 or a +4, while in
+    fact these numbers are how much your THAC0 is DECREASED.  A level 1 Fighter 
+    has 20 THAC0, but if he has 18/00 STR, his THAC0 is decreased to 17.
+
+    The weapon used also has an effect on THAC0, both by the weapon itself and
+    also through Proficiency (although Proficiency is an optional rule, and
+    of the games listed at the top, only Baldur's Gate, Planescape: Torment,
+    Icewind Dale, and Baldur's Gate II follow this rule).  Generally speaking,
+    the amount the THAC0 is changed is the number after the +.  A Long Sword +1
+    would improve THAC0 by 1 point.  There are exceptions to this, some weapons
+    won't have a + but improve THAC0 anyway, and some will say +1, but will in
+    fact improve THAC0 more than 1 point.  In these cases, checking that items
+    information will reveal how it modifies THAC0 (only available in some 
+    games).
+
+      Note: To check the item information in BG1, BG2 and IWD, right click the
+            item in the inventory screen. Also note that magical items are very
+            often "NOT IDENTIFIED." Meaning that you won't know what they do
+            until they are IDENTIFIED.  See the FAQ below.
+
+    Special Effects can be either a spell that improves THAC0 (Bless, for
+    instance), or an Item that improves THAC0, but isn't a weapon, such as an
+    Amulet of Thac0 +1.
+
+    Proficiency was introduced to show what your character is skilled in, or
+    not skilled in.  It has only really been used since Baldur's Gate in 1998.
+    Since proficiency represents your character's knowledge of the weapon being
+    used, using a weapon that you don't have proficiency in will result in a
+    penalty to THAC0 and to Damage.
+
+    PROFICIENCY as a THAC0 Modifier: (Baldur's Gate I & II, Icewind Dale,
+                                      Planescape: Torment only)
+
+      Level of Proficiency    Points Spent    Bonus to Hit
+
+      Non-Proficient               0            -2 (Warrior)
+                                                -5 (Wizard)
+                                                -3 (Priest or Rogue)
+      Proficient                   1             0 (but there is no penalty)
+      Specialized                  2            +1
+      Master                       3            +3
+      High Master                  4            +3
+      Grand Master                 5            +3
+
+    As you can see, a Wizard using a weapon that he isn't proficient in will
+    result in a steep penalty, so he could have 20 THAC0, but because he is
+    using the wrong weapon his THAC0 leaps up to 25.
+
+    Dexterity Note:  Dexterity has one small effect on THAC0, but only towards
+                     the use of MISSILE WEAPONS (bows, crossbows, etc.).  At
+                     a DEX of 16 you get a +1 to hit, 17 & 18 +2, and 19 +3.
+
+  Armor Class Explained:
+  ----------------------
+
+    Armor Class isn't really about armor.  It is the composite of Armor and
+    Dexterity that determines how hard it is for a damaging hit to be made.
+    The base Armor Class (AC) is 10.  Anything lower is better and makes your
+    character harder to hit. It does NOT reduce the amount of damage taken.
+
+    The first facet of Armor Class is your Dexterity Score.  The higher the
+    Dexterity, the lower (better) your Armor Class.  This reflects your 
+    character's ability to dodge attacks. So, here, negative numbers are 
+    better.
+
+    DEXTERITY as an Armor Class Modifier
+
+        DEX       AC Adj.                      DEX      AC Adj.
+         3         +4                          14          0
+         4         +3                          15         -1
+         5         +2                          16         -2
+         6         +1                          17         -3
+         7          0                          18         -4
+         8          0                          19         -4
+         9          0                          20         -4
+        10          0                          21         -5
+        11          0                          22         -5
+        12          0                          23         -5
+        13          0                          24         -6
+                                               25         -6
+
+    Whether you are on level 1 or level 20 your AC is still determined by the
+    same two factors, DEX and Armor.  So, a level 1 Fighter with a Dex of 18
+    would have an AC of 6 (before putting any armor on, BASE AC(10) + 
+    DEX ADJ.(-4) = AC).  A level 20 fighter who has no armor would have the
+    same AC with the same DEX.
+
+    Which brings us to the BULK of where AC is made up, Armor.  We will divide
+    armor into two categories, actual Armor (such as Plate Mail Armor) and
+    support Items (such as Ring of Protection +1).
+
+    Armor usually lists what your AC will be based from the Base AC itself.
+    So Leather Armor will list its AC as AC 8.  What this means is that if you
+    had the base AC of 10, wearing Leather Armor will decrease your AC to 8.
+    If you do NOT have the Base AC (and who does), it still decreases your AC
+    by 2 points.  If we wanted to determine the AC of our 18 DEX Fighter
+    wearing Leather Armor we would need to take the Leather Armor AC(8) +
+    Dexterity Bonus(-4) to get 4.  In this way you can think of your Armor's
+    AC as REPLACING your Base AC.  So instead of starting at 10, with Leather
+    Armor you would start at 8.
+
+    Armor as an AC modifier (not all armors are in all games)
+
+         Armor                  AC
+
+         Leather Armor           8
+         Studded Leather         7
+         Hide Armor              6
+         Scale Mail              6
+         Brigandine Armor        6
+         Chain Mail              5
+         Ring Mail               5
+         Elven Chainmail         5
+         Drow Chainmail          4
+         Banded/Splint Mail      4
+         Plate Mail              3
+         Field Plate             2
+         Full Plate              1
+
+    If an armor is said to be +1, or +2 that means that the armor has an extra
+    special bonus attached that further lowers AC by that number.  So a Chain
+    Mail +4 would have an AC score of 1 rather than 5.
+
+    In addition to your Armor, AC is also determined by special items being
+    worn by the character.  The most common special item is the common shield
+    which improves AC by one point (our 4 AC, 18 DEX Leather Armor Fighter
+    would then drop to 3 AC with a Shield).  There are various varieties of
+    shields, but they all do the same job.  Other items would be Rings of
+    Protection or Cloaks of Protection.  These all improve the AC of the
+    wearer.
+
+      Note:  Some games (Baldur's Gate, for example) allow only ONE extra 
+             protective item (not counting shields) to be worn at a time.  This 
+             includes Magic Armors.  So, if you wore a Chainmail +1, you
+             couldn't wear a Ring of Protection +1.  Or, if you had that
+             Ring of Protection +1 you couldn't wear the Cloak of 
+             Protection +1.
+
+    Magic can also function as armor, however, it usually acts in place of 
+    armor rather than as a bonus to it. Take the spell "Armor" or "Shield" for
+    example. They set your AC to 6 and 4, respectively, but if you're wearing
+    armor better than either, you get no extra benefit.  There are some spells
+    that provide a simple bonus, such as Defensive Harmony (BG1, BG2, IWD), so
+    check spell descriptions.  
+
+
+-------------------------------------------------------------------------------
+Article 2:  Magic
+-------------------------------------------------------------------------------
+
+  The Magic System used in AD&D is different from almost every other magic
+  system out there.  For one thing, there is no "Mana" system, or anything
+  similar that most games run on.  So, how does Magic work in the AD&D games?
+
+  First, magic is divided into two main categories, MAGIC-USER and PRIEST.
+  This is an important distinction as there are some subtle and some 
+  not-so-subtle differences between the two.
+
+  Who Casts Which Magic
+
+    Magic User         Priest
+    ----------         -------
+    Mage               Cleric
+    Bard               Paladin (at experience level 9)
+    Sorcerer           Ranger (at experience level 8)
+                       Druid
+
+  Separate from your EXPERIENCE LEVEL is your spellcaster's SPELL LEVEL.  This
+  is an important distinction that a lot of novices miss.  A level 6 mage
+  CANNOT cast level 6 spells.  In fact, a mage can't cast level 6 spells until
+  he has reached EXPERIENCE LEVEL 12.  There are 9 Wizard SPELL LEVELS but
+  only 7 Priest SPELL LEVELS.  However, when a spell says that it becomes more
+  powerful "for every 3 levels of the caster" it is referring to EXPERIENCE
+  LEVELS rather than SPELL LEVELS.  It's easiest to remember that you gain a
+  SPELL LEVEL at every other EXPERIENCE LEVEL.  So a mage starts at level 1,
+  and can cast level 1 spells, at level 2, still just level 1 spells, but level
+  3, he gains abilities in the 2nd level spells.
+
+  How powerful a spellcaster you are depends on the class of the magic-user or 
+  priest and on the stats as well.  The Mage, Druid and Cleric are the only
+  classes who can learn all spell levels.  Druids and Clerics can only cast
+  the 6th and 7th level spells if they have wisdoms of at least 17 or 18
+  respectively. (7th level is as far as Priest spells go)
+
+  Spell Level Limit
+
+    Mage          * Depends on Intelligence, see Intelligence Chart below *
+    Bard          6
+    Ranger        3
+    Paladin       4
+
+  This way a Bard can learn up to 6th level wizard spells, and a Ranger can
+  learn up to 3rd, but no farther.  You won't find Bards casting level 7 spells
+  as it can't happen.
+
+  Now that we understand who can do what, let's talk about how magic works
+  more specifically.  There are three steps towards casting a spell (depending
+  on the game).
+
+    1. Add a spell to spellbook.  Priests do this automatically and know every
+       spell for their spell level.  Mages need to find a spell scroll and
+       scribe that spell into their spell book.  Since Mages have to actually
+       find a scroll and scribe it in, there is a chance that they might fail,
+       which is based on their intelligence. (Clerics already know all spells
+       so they can't fail)  There is an intelligence chart later in this 
+       article.  Mages are further limited by the number of spells they can
+       learn per spell level, again this relates to intelligence.
+
+    2. Memorize the spell.  Once the spell is in your spellbook, you need to
+       decide which spells you want to "memorize".  Only spells that you have
+       memorized can be cast, and they can only be cast once per memorization.
+       So if you memorize one Magic Missile, then you can cast one Magic
+       Missile.  The number of spells that you can memorize per spell level
+       are listed below.  The memorization process usually involves Resting for
+       a set amount of time.  Baldur's Gate does this through the spellbook 
+       (w) and the priest scroll (p) interfaces. Empty boxes represent spell
+       slots that are available on the left, with known spells on the right.
+
+    3. And then you can actually cast the spell.  Again, you only get to cast
+       a memorized spell once before needing Rest to rememorize it.  If you
+       memorized a spell more than once (and you can memorize one spell as
+       many times as you have free slots), you can cast it as many times as it
+       was memorized.
+
+  Spell Progression Charts by Class
+
+    CLERIC / DRUID
+
+           Spell Levels ---->         1   2   3   4   5   6*  7**
+
+      Exp. Level
+           1                          1   -   -   -   -   -   -
+           2                          2   -   -   -   -   -   -
+           3                          2   1   -   -   -   -   -
+           4                          3   2   -   -   -   -   -
+           5                          3   3   1   -   -   -   -
+           6                          3   3   2   -   -   -   -
+           7                          3   3   2   1   -   -   -
+           8                          3   3   3   2   -   -   -
+           9                          4   4   3   2   1   -   -
+          10                          4   4   3   2   2   -   -
+          11                          5   4   4   3   2   1   -
+          12                          6   5   5   3   2   2   -
+          13                          6   6   6   4   2   2   -
+          14                          6   6   6   5   3   2   1
+          15                          6   6   6   6   4   2   1
+          16                          7   7   7   6   4   3   1
+          17                          7   7   7   7   5   3   2
+          18                          8   8   8   8   6   4   2
+          19                          9   9   8   8   6   4   2
+          20                          9   9   9   8   7   5   2
+
+          * Use of 6th level spells requires a WIS of 17 or greater
+          ** Use of 7th level spells requires a WIS of 18 or greater
+
+    PALADIN
+
+           Spell Levels ---->         1   2   3   4
+
+      Exp. Level    Casting Level*
+
+           9            1             1   -   -   -
+          10            2             2   -   -   -
+          11            3             2   1   -   -
+          12            4             2   2   -   -
+          13            5             2   2   1   -
+          14            6             3   2   1   -
+          15            7             3   2   1   1
+          16            8             3   3   2   1
+          17            9             3   3   3   1
+          18            9             3   3   3   1
+          19            9             3   3   3   2
+          20            9             3   3   3   3
+
+          * Casting Level is the effective EXPERIENCE LEVEL the Paladin is for
+            purposes of spellcasting.  If a spell is more powerful for higher
+            EXP LEVELS, this is the level they're referring to, not his actual
+            EXP LEVEL. Because of this, Paladins make poor spellcasters.
+
+    RANGER
+
+           Spell Levels ---->         1   2   3
+
+      Exp. Level    Casting Level*
+
+           9            1             1   -   -
+          10            2             2   -   -
+          11            3             2   1   -
+          12            4             2   2   -
+          13            5             2   2   1
+          14            6             3   2   1
+          15            7             3   2   2
+          16            8             3   3   3
+
+          * Casting Level is the effective EXPERIENCE LEVEL the Ranger is for
+            purposes of spellcasting.  If a spell is more powerful for higher
+            EXP LEVELS, this is the level they're referring to, not his actual
+            EXP LEVEL.
+
+    MAGE
+
+           Spell Levels ---->         1   2   3   4   5   6   7   8   9
+
+      Exp. Level
+           1                          1   -   -   -   -   -   -   -   -
+           2                          2   -   -   -   -   -   -   -   -
+           3                          2   1   -   -   -   -   -   -   -
+           4                          3   2   -   -   -   -   -   -   -
+           5                          4   2   1   -   -   -   -   -   -
+           6                          4   2   2   -   -   -   -   -   -
+           7                          4   3   2   1   -   -   -   -   -
+           8                          4   3   3   2   -   -   -   -   -
+           9                          4   3   3   2   1   -   -   -   -
+          10                          4   4   3   2   2   -   -   -   -
+          11                          4   4   4   3   3   -   -   -   -
+          12                          4   4   4   4   4   1   -   -   -
+          13                          5   5   5   4   4   2   -   -   -
+          14                          5   5   5   4   4   2   1   -   -
+          15                          5   5   5   5   5   2   1   -   -
+          16                          5   5   5   5   5   3   2   1   -
+          17                          5   5   5   5   5   3   3   2   -
+          18                          5   5   5   5   5   3   3   2   1
+          19                          5   5   5   5   5   3   3   3   1
+          20                          5   5   5   5   5   4   3   3   2
+
+    BARD
+
+           Spell Levels ---->         1   2   3   4   5   6
+
+      Exp. Level
+           1                          -   -   -   -   -   -
+           2                          1   -   -   -   -   -
+           3                          2   -   -   -   -   -
+           4                          2   1   -   -   -   -
+           5                          3   1   -   -   -   -
+           6                          3   2   -   -   -   -
+           7                          3   2   1   -   -   -
+           8                          3   3   1   -   -   -
+           9                          3   3   2   -   -   -
+          10                          3   3   2   1   -   -
+          11                          3   3   3   1   -   -
+          12                          3   3   3   2   -   -
+          13                          3   3   3   2   1   -
+          14                          3   3   3   3   1   -
+          15                          3   3   3   3   2   -
+          16                          4   3   3   3   2   1
+          17                          4   4   3   3   3   1
+          18                          4   4   4   3   3   2
+          19                          4   4   4   4   3   2
+          20                          4   4   4   4   4   3
+
+  The final concept that we'll deal with here are the Stat bonuses as they
+  relate to spellcasting.  The two stats in question are, of course, WISDOM and
+  INTELLIGENCE.  Only Priests gain extra casting spells per level (the number
+  of spells which can be memorized and cast), however Mages are very dependent
+  upon Intelligence for other things, such as % to scribe a spell into their
+  spellbook and how many spells they can know per spell level.  A lot of games
+  don't deal with some of these stats.
+
+  Intelligence as it relates to Mages
+
+    Intelligence       Max Spell Level    % to Learn Spell   # Spells / Level
+    ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+         8                  --  can't cast magic at these levels  --
+         9                  4th                 35%                6
+        10                  5th                 40                 7
+        11                  5th                 45                 7
+        12                  6th                 50                 7
+        13                  6th                 55                 9
+        14                  7th                 60                 9
+        15                  7th                 65                11
+        16                  8th                 70                11
+        17                  8th                 75                14
+        18                  9th                 85                18
+        19                  9th                 95               All
+        20                  9th                 96               All
+        21                  9th                 97               All
+        22                  9th                 98               All
+        23                  9th                 99               All
+        24                  9th                100               All
+        25                  9th                100               All
+
+  So a Mage with only 17 INT can't learn 9th level spells, has a 75% chance to
+  copy a scroll into his spellbook, and can only learn 14 spells per level
+  anyway.  Thus we see why having an 18 INT mage is important.
+
+  Wisdom as it relates to Priests
+
+    Wisdom        Bonus Spells          % Spell Failure
+    ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+      8               --  can't cast spells at this level  --
+      9               0                        20
+     10               0                        15
+     11               0                        10
+     12               0                         5
+     13           +1 1st level                  0
+     14           +1 1st level                  0
+     15           +1 2nd level                  0
+     16           +1 2nd level                  0
+     17           +1 3rd level                  0
+     18           +1 4th level                  0
+     19           +1 1st & +1 4th               0
+     20           +1 2nd & +1 4th               0
+     21           +1 3rd & +1 5th               0
+     22           +1 4th & +1 5th               0
+     23           +2 5th                        0
+     24           +2 6th                        0
+     25           +1 6th & +1 7th
+
+  Note:  Bonus spells are cumulative, so an 18 WIS cleric would get +2 1st
+         level, +2 2nd level, +1 3rd level and +1 4th level spells.  While a
+         13 WIS cleric would get only +1 1st level.
+
+  Also Note:  Paladins and Rangers don't get Bonus Spells.
+
+  Final Note:  If you, or any spellcaster, is hit while casting their spell,
+               the spell is interrupted and won't be cast.
+
+
+-------------------------------------------------------------------------------
+Article 3:  Levels
+-------------------------------------------------------------------------------
+
+  With the proliferation of less "realistic" RPG levelling systems, I am often
+  asked why your stats never improve when you gain levels, and what levels
+  do gain you; which is what this article is all about. (of course, it didn't
+  help that Torment DID give you stat increases)
+
+  Basically, there are three things that levels improve: Hit Points, THAC0, and 
+  Saving Throws. (There are other "secondary" effects of higher levels, such as
+  more powerful magics, but that isn't necessary to understand the basics here)
+
+  Hit Points gained per level:
+
+    level     Fighters   Priests   Rogues   Wizards
+    -----------------------------------------------
+    1 to 9      10         8         6        4
+    10+          3         2         2        1
+
+  You gain most of your character's HP during the first 9 levels.  A Fighter
+  with average Constitution will gain 10 HP a level, and so could be a level
+  9 fighter with 90 HP (assuming that you got max HP each level).  The number
+  of HP you get is usually random.  Meaning you can get anywhere from 1 to
+  your classes max (in the Fighters case, he would gain between 1 - 10 HP a
+  level).
+
+  Also for the first 9 levels you will also gain a Constitution bonus to your
+  HP.
+
+  Constitution HP Bonuses:
+
+    CON    HP Adj.             CON    HP Adj.
+
+     3       -1                15      +1
+     4       -1                16      +2
+     5       -1                17      +2 (+3)
+     6        0                18      +2 (+4)
+     7        0                19      +2 (+5)
+     8        0                20      +2 (+5)
+     9        0                21      +2 (+6)
+    10        0                22      +2 (+6)
+    11        0                23      +2 (+6)
+    12        0                24      +2 (+7)
+    13        0                25      +2 (+7)
+    14        0
+
+    Only Fighters/Paladins/Rangers gain the CON bonus in the parenthesis.
+    Because of this, only these classes need a CON score above 16.
+
+  So, a Fighter with 18 CON (the best a Human can get) COULD gain 14 HP a 
+  level. (the range would be 5-14)
+
+  Finally there are Saving Throws.  Saving Throws represent your character's
+  ability to avoid various effects, such as a Death Spell.  If he has good
+  enough Saving Throws (and makes the random roll) then he can survive the
+  spell.  These also improve as you go up in level, with the lower scores being
+  better (just like golf).
+
+  Saving Throws per Level:
+                       
+                       Para/Pois/           Petrification/   Breath
+    Class      Level     Death       Wand     Polymorph      Weapon     Spell
+    ---------------------------------------------------------------------------
+    Priest     1 to 3      10         14          13           16         15
+               4-6         9          13          12           15         14
+               7-9         7          11          10           13         12
+               10-12       6          10           9           12         11
+               13-15       5           9           8           11         10
+               16-18       4           8           7           10          9
+               19+         2           6           5            8          7
+    ---------------------------------------------------------------------------
+    Rogues     1-4        13          14          12           16         15
+               5-8        12          12          11           15         13
+               9-12       11          10          10           14         11
+               13-16      10           8           9           13          9
+               17-20       9           6           8           12          7
+               21+         8           4           7           11          5
+    ---------------------------------------------------------------------------
+    Warriors   1-2        14          16          15           17         17
+               3-4        13          15          14           16         16
+               5-6        11          13          12           13         14
+               7-8        10          12          11           12         13
+               9-10        8          10           9            9         11
+               11-12       7           9           8            8         10
+               13-14       5           7           6            5          8
+               15-16       4           6           5            4          7
+               17+         3           5           4            4          6
+    ---------------------------------------------------------------------------
+    Wizards    1-5        14          11          13           15         12
+               6-10       13           9          11           13         10
+               11-15      11           7           9           11          8
+               16-20      10           5           7            9          6
+               21+         8           3           5            7          4
+
+
+  Items can also improve Saving Throws. A Ring of Protection +1 adds both a +1
+  to AC and Saves. At higher levels, saving throws become much more important 
+  than AC as monsters will use many spells and supernatural abilities against
+  you.
+
+    Note:  Saving throws are better when they're lower, and can even go into
+           the negatives. However, the random roll is still 1 to 20. Thus, 
+           someone with a -2 Save vs. Death should always make that save,
+           although some spells will state that all saves against that spell
+           are made at a penalty.
+
+
+-------------------------------------------------------------------------------
+Article 4:  Multiclassing and Dual Classing
+-------------------------------------------------------------------------------
+
+  Normally the 2nd Edition AD&D rules allows for 8 character classes:
+
+    Paladin*
+    Bard*
+    Fighter
+    Ranger
+    Druid
+    Cleric
+    Mage
+    Thief
+
+    * Cannot be multi/dual classed
+
+  Not all of these classes will be in all games.  There are also combinations
+  of these classes called, Multiclasses, where one person can be two or three
+  classes at once.  Humans cannot multiclass, they can only Dual class.
+
+  Which multiclass you can be depends on the race of your character.
+
+  Races and Multiclasses:
+  -----------------------
+
+    Dwarf                           Halfling
+    -----                           --------
+    Fighter/Thief                   Fighter/Thief
+    Fighter/Cleric
+                                    Half-Elf
+    Elf                             --------
+    ---                             Fighter/Cleric
+    Fighter/Mage                    Fighter/Thief
+    Fighter/Thief                   Fighter/Druid**
+    Mage/Thief                      Fighter/Mage
+    Fighter/Mage/Thief              Cleric/Ranger
+                                    Cleric/Mage
+    Gnome                           Thief/Mage
+    -----                           Fighter/Mage/Cleric
+    Fighter/Cleric                  Fighter/Mage/Thief
+    Fighter/Illusionist*
+    Fighter/Thief
+    Cleric/Illusionist*
+    Cleric/Thief
+    Illusionist/Thief*
+
+    *Illusionists are not in all games, this could be considered "mage"
+    **Druids are not in all games
+
+  As you can see, Half-Elves are the most versatile of all races when it comes
+  to multiclassing.
+
+  Experience for the multiclassed character is divided evenly among his
+  various classes.  If a Fighter/Thief gains 1000 experience from killing an 
+  evil Halfling of Doom, then his Fighter half gains 500 experience and his
+  Thief half gains 500 experience.  Thusly, the multiclassed character usually
+  levels up at half the speed of "plain" characters. This does not mean that
+  this multi- character will be half the levels, he usually is only a couple
+  levels behind.
+
+  Hitpoints are handled similarly.  When the Fighter/Thief gains a Fighter
+  level, he gains 1/2 the normal Fighter HP.  Fighters normally get 10 HP per
+  level, and the Fighter/Thief would gain 5 HP max for a Fighter level and 3
+  for the Thief level.  Constitution bonuses are handled in one of two ways:
+
+    1) You get the bonus once per number level.  So, our Fighter/Thief would
+       get the CON bonus when his Thief level goes up as that levels up faster.
+    2) The CON bonus is divided by your number of classes and you get one part 
+       per each class' level.  If you were a Fighter/Thief you would still get
+       the extra CON for warriors.
+
+  Dual classing is the Human answer to Multiclassing.  At level 2 or higher, 
+  the human can decide to switch to a new class.  Then for a time he will be
+  JUST that class until his new class exceeds the level of his old class.  At
+  that point your old classes' abilities return and you become similar to a
+  Multiclass... except that you are only levelling one class now, rather than
+  dividing your exp amongst classes.
+
+    Note:  As far as I know, only the Baldur's Gate/Infinity Engine games have
+           implemented Dual Classing.  Bryan A. Keith mentions that some of
+           the later Gold Box games implemented Dual Classing (Curse and 
+           beyond).
+
+  There are several conditions to Dual Classing:
+
+    1)  You MUST be Human.
+
+    2)  You MUST be at least level 2.
+
+    3)  You MUST start from a Class that can dual.  Paladins/Bards cannot Dual
+        to anything, nor can you dual anyone to a Bard/Paladin.
+
+    4)  The combination MUST be a valid "Multiclass."  If you can't find it
+        on the list above (ignore the race restrictions), then you can't dual
+        it.  An example of an ILLEGAL class would be a Fighter/Ranger.  Not
+        a valid Multiclass, so you can't Dual it either.
+
+    5)  You need to have sufficient Stats.  You need at least 15 in the Prime
+        Stats of your current class (i.e. 15 STR for a Fighter) and at least
+        17 in the Prime Stats of your desired class (i.e. 17 INT for a Mage).
+
+          Note:  Specialist Mages have an extra "Prime Stat" beyond just INT.
+
+    6)  Finally there is also an Alignment Requirement.  Thieves cannot be
+        Lawful, so a Lawful Good Fighter cannot Dual to a Thief.  Also Druids
+        must be True Neutral.
+
+  So, a level 2, Neutral Good Fighter with 15 STR and 17 DEX can dual to a
+  Thief.  While a level 2, Neutral Good Thief with 15 STR and 17 DEX can't
+  dual to fighter. (he would need 17 STR and 15 DEX)  When the first 
+  hypothetical character gained level 3 as a Thief, he would become a   
+  true Fighter/Thief, however he would only gain Thief levels.
+
+    Note:  It doesn't matter which order you go from.  You can start out as a
+           Thief and dual to a Fighter, or a Fighter to a Thief.  It amounts
+           to the same thing.  Which way you do it only affects which class
+           will continue to gain experience.
+
+
+-------------------------------------------------------------------------------
+Frequently Asked Questions
+-------------------------------------------------------------------------------
+
+  Q:  What is a CRPG?
+
+  A:  Computer Role Playing Game.
+
+
+  Q:  Aren't there other AD&D games that you didn't mention in your list?  What
+      about the Dragonlance games?
+
+  A:  I am completely unfamiliar with those games to be able to say how they
+      implemented the rules.  They might not even be based on the AD&D ruleset
+      for all I know.
+
+
+  Q:  Why don't my stats improve when I get a level?
+
+  A:  Stats such as Strength and Dexterity are considered "set" when you start
+      your adventure.  Other stats such as HP and THAC0 improve as you go up
+      in level.  This is a more realistic (though I use that term loosely)
+      system than most of the others out there in which your stats improve
+      upon every level up.  Killing monsters doesn't make you stronger, 
+      smarter, or faster, it merely gives the experience allowing you to kill
+      monsters easier.
+
+
+  Q:  I have a magic item, but I don't know what it does? How can I get it
+      IDENTIFIED?
+
+  A:  Three ways:
+
+      1.) Lore. (At least in BG1, IWD1, BG2 and PST) All characters have a 
+          certain Lore skill that is based on class/levels and int/wis. Bards 
+          get the most while fighters get the least. Every item has a lore 
+          value. (which you don't know) If your character's Lore is equal to 
+          the item's Lore, the item is identified for free. (usually done with 
+          a right-click in the inventory screen)
+      
+      2.) The Identify spell. In Baldur's Gate, right click the item, click
+          Identify, and by Scroll (if you have one) or by Spell (if you have it
+          memorized). Only done by wizards.
+
+      3.) At stores. The most common way in all games, all stores will IDENTIFY
+          items for you for a fee. 
+
+
+  Q:  I'm stuck in [game], where is the [whatever]?
+
+  A:  Of the games listed, I have made only 5 walkthroughs, Dungeon Hack,
+      Baldur's Gate, Icewind Dale, Baldur's Gate II and Planescape: Torment.  
+      If your question isn't about one of those games, and has nothing to do 
+      with the general rules system, don't ask.
+
+
+  Q:  In [game] the rules are different than you say here.  What gives?
+
+  A:  Not every game has all the rules, and often they change them to fit
+      within the confines of their game better.  These are the 2nd Edition
+      AD&D Rules.  Whether the game makers adhered to these rules is another
+      matter.
+
+
+  Q:  Where can I get any of these old games, like Dungeon Hack or Pool of
+      Radiance?
+
+  A:  Try the Interplay Forgotten Realms Archives Silver Edition.  I can't
+      find any place online to buy this, but it might pop up on eBay or
+      another auction site.
+
+      Just don't expect Baldur's Gate style action, these games are quite
+      primitive.
+
+      I do not know where you could get any of the other games.
+
+
+-------------------------------------------------------------------------------
+Final Words...
+-------------------------------------------------------------------------------
+
+This FAQ was written entirely using the GWD Text Editor:  (shareware)
+  http://www.gwdsoft.com/
+
+_________________________
+Special Thanks: (Credits)
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+  Poromenos who pointed out that I said Paladin when I should say Ranger
+  Jopezu for pointing out a THAC0/AC error
+  Leo Wang for some pointers
+  Edward Lacey for pointing out Dexterity as a THAC0 modifier
+  CJayC for posting this FAQ
+  Anyone who emails me with nice things to say, you are appreciated!
+
+_________________________
+Shameless Self Promotion:
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+  I am Dan Simpson (dsimpson.faqs@gmail.com) and have also written FAQs for:
+
+    NES:      Disney Adventures in the Magic Kingdom
+              Final Fantasy -- Magic FAQ
+              The Legend of Zelda
+    SNES:     Aerobiz
+              Aerobiz Supersonic
+              Utopia: Creation of a Nation
+    Genesis:  StarFlight
+    PSX:      Thousand Arms -- Walkthrough
+                            -- Forging/Dating FAQ
+    PS2:      Madden NFL 2001
+    XBOX:     Star Wars: KotOR II: The Sith Lords -- FAQ/Walkthrough
+                                                  -- Influence Guide
+    PC:       AD&D Rules FAQ, 2nd and 3rd Editions
+              Baldur's Gate & Tales of the Sword Coast -- FAQ/Walkthrough
+                                                          NPC List
+                                                          Creature List
+              Baldur's Gate II & Throne of Bhaal -- FAQ/Walkthrough
+                                                 -- Items List
+                                                 -- Class FAQ
+                                                 -- Creature List
+              Civilization III (incomplete)
+              Colonization -- the Single Colony Strategy Guide
+                           -- the Cheat Guide
+              Drakan: Order of the Flame
+              Dungeon Hack
+              Icewind Dale & Heart of Winter -- FAQ/Walkthrough
+                                                Items List
+                                                Kresselack's Tomb Map (JPG)
+                                                Burial Isle Map (JPG)
+                                                Shattered Hand Map (JPG)
+              Icewind Dale II                -- Items List
+              Master of Magic (revision)
+              Messiah
+              Pharaoh (currently being edited by Red Phoenix)
+              Planescape: Torment  -- FAQ/Walkthrough
+                                      Items Listing
+              Rollercoaster Tycoon
+              Sid Meier's Alpha Centauri
+              The Sims
+              Ultima 4: Quest of the Avatar
+              Ultima 7: The Black Gate
+              Ultima 7 Part 2: Serpent Isle
+              Ultima Underworld -- Keyboard Commands
+              Ultima Underworld II -- Keyboard Commands
+                                   -- Spell List
+  All of my FAQs can be found at:
+    http://www.gamefaqs.com/features/recognition/2203.html
+    ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
+________________
+Version History:
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+  Version 1.0  August 15, 2000  19k
+
+  Version 2.0  August 17, 2000  33k
+
+    Added the Magic Article.
+
+  Version 2.1  August 20, 2000  34k
+
+    Added a Dexterity Note to the Article on THAC0, and some other small
+    changes.
+
+  Version 3.0  October 26, 2000  39k
+
+    Filled in the Levels article.  Other small updates.
+
+  Version 4.0  November 26, 2000  44k
+
+    Filled in the Multi/Dual Classing article.  So, barring questions, this
+    guide is finished.
+
+  Version 4.1  May 31, 2001  45k
+
+    Corrected a small mistake in the THAC0/AC section. (thanks to Jopezu)
+
+  Version 4.2  June 18, 2001  45k
+
+    Corrected a mistake (with thanks to Poromenos).
+
+  Version 4.3  Septebmer 11, 2002  45k
+
+    Tiny changes.
+
+  Version 4.4  December 22, 2004  49k
+
+    Clarified a few things.
+
+  Version 4.41  January 17, 2005  49k
+
+    Changed email addresses. Small changes to the format.
+
+
+_______________________________________________________________________________
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+This Document is Copyright 2000-2005 by Dan Simpson and is intended SOLELY to
+help people with little or no AD&D experience get by in oft confusing CRPGs.
+
+DUNGEONS & DRAGONS, ADVANCED DUNGEONS & DRAGONS, D&D, AD&D, and all related
+marks are Trademarks, Registered Trademarks, or Copyrights owned by Wizards of
+the Coast, Inc. All rights reserved.
+
+This FAQ may be posted on any site so long as NOTHING IS CHANGED and you EMAIL
+ME telling me that you are posting it.  You may not charge for, or in any way
+profit from this FAQ.
+

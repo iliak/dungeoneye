@@ -1,0 +1,142 @@
+             Eye of the Beholder II
+		Item List Stuff
+	Maelwys Goldenmoon maelwys@inwave.com
+
+        In a fit of complete boredom one day, I thought it actually
+might be fun to wade through the hex code on the Eye of the
+Beholder II save file and change some values and such. I give many,
+many thanks to Silver Rainmaker for his file on editing the basic
+values and attributes. It's quite helpful and if you're playing
+the game and want to toy with those things, I suggest you grab it
+and see what you can do. So after changing my characters around
+completely and maxing them all out, I moved on to the items. Yay.
+Anyway, I'm not going to cover the stuff S.R. already did, since I
+don't feel like copying his work, instead I'm going to tell you
+all about the items. First off, get yourself a Hex editor. Norton
+Diskedit is the one I use and probably the most common to find.
+It's very nice besides... so if you have it, use that. Before you
+start fiddling with your character, it might be a good idea to go
+ahead and save the file: eobsave* to a temporary directory just in
+case you mess up royally. The * above is the number of y
+our savefile in the game. It can be anything from 0 to 7, where 0
+is the top savegame, 1 is the next, then 2, and so on and so forth up
+to 7. Now, on to the editing. When you open the file, you see all that
+fun hex stuff, looking something like this:
+
+4D 61 69 6E 20 50 61 72 - 74 79 00 00 00 00 00 00   Main Party......
+00 00 00 00 00 01 42 72 - 75 65 6E 6F 72 00 00 00   ......Bruenor...
+00 12 12 64 64 12 12 12 - 12 11 11 13 13 10 10 A2   ...dd..........Û
+00 A2 00 F6 00 06 00 04 - 19 3D 0D 00 00 FE A1 13   .Û.˜.....=...çÌ.
+00 88 13 00 00 88 13 00 - 00 64 1E 9B 75 00 00 00   .Í...Í...dç¢u...
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 FA 00 70 01 4E 01 00 - 00 00 00 00 00 B2 01 AA   ...p.N.........¨
+00 C9 01 00 00 00 00 00 - 00 00 00 00 00 0E 02 00   ................
+01 DA 01 BD 01 CE 00 98 - 00 00 00 90 01 00 00 00   .......ˇ...…....
+00 00 00 C4 01 C5 01 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 04   ................
+09 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+
+And thats it for the first character. It's long, confusing and really just a jumble of junk. I should note now that I didn't bother to figure the pattern out for each character slot. The above is just the hex code for the -first- character in your group, 
+that is to say, the one on the top left. If you want to change the items on your other characters you can either swap that character over to the Top/Left slot, or just give the items to your first character and then in the game, have that character give t
+hem in turn to your other characters. Whatever works for ya.
+	Okay, the first 5 lines of that stuff up there are dealt with in S.R's list. They are the basics of your character, all the attributes and such. The next 10 lines of zero's are nothing that I can tell. It's the following lines that I'll deal with, the on
+es beginning with: 00 FA... in the above example. 
+	Alrighty! Now on to the meat of the matter, and the part which is probably going to make you groan in agony. The item lists change for each game you play! Yup, thats right... they aren't the same and what is one item in one of your games is something com
+pletely different in another. The reason for this is because when you first start the game, your item list is pretty blank. The only things on it are your starting gear and a few basic items: food, leather armor, daggers, rocks, etc... As you play the gam
+e and find new things, they are assigned a hex value in the 'item database'. So basically, if you want to find out where that +5 platemail from EOB1 is, you've got to plug in all the values on your character until you get it. Now, just to keep you from to
+ssing this document altogether and sending me hate mail, I will tell you a few useful things. First of all, I've found that a few of the hex codes do seem to be the same for every game you play. And if you plug these values in, they -should- be what I say
+ they are. I'm not guaranteeing it, but it's worth a shot. Also, I've also figured out which slot covers which codes on the character. So I'll get into that right now.
+	Okay, in your character file, items are designated by two hex digits, starting with the: FA 00. That is to say, FA 00 is your first item. All the items on your character follow that same pattern. Each, uses a primary hex code, anywhere from 01 to FF and 
+then a secondary, which is anywhere from 00 to 03. This is because in the game there are a lot more than 254 items, and there is an item slot for each and every item you can possibly have. Each rock you find or create, each scroll and potion has its own c
+ode. It's an extrememly wasteful bit of writing really, since they actually only need to give an item one slot, but it's the way the game was done and who am I to fault programmers. *snort*. So, lets start with the first line, which looks like this:
+
+00 FA 00 70 01 4E 01 00 - 00 00 00 00 00 B2 01 AA   ...p.N.........¨
+
+On this line, the first 00 doesn't do anything. So starting with the FA, we go right across, making two code bits out of the entire line, till we have 7 full items and half of the eighth. That last single byte has its corresponding secondary value on the 
+beginning of the next line. Now, onto the slots used up.
+	And here goes: 'FA 00' is your Top Hand Held slot. '70 01' is your bottom hand held slot. 4E 01 is the first slot of your backpack (Top/Left). The next two, designated by a '00 00' are the Top/Right slot of your backpack, and then the following two, also
+ '00 00' are the next row down, starting on the left. In that way, going sort of zigzagging down the backpack slots, we run through all 14 backpack slots, moving on to the next lines:
+
+00 C9 01 00 00 00 00 00 - 00 00 00 00 00 0E 02 00   ................
+01 DA 01 BD 01 CE 00 98 - 00 00 00 90 01 00 00 00   .......ˇ...…....
+00 00 00 C4 01 C5 01 00 - 00 00 00 00 00 00 00 00   ................
+
+The last backpack slot (Bottom/Right) is taken up here by the '00 01' at the end of the first line and moving on to the beginning of the second line above. And then you move on to 'DA 01' which is your quiver. 'BD 01' is your armor slot, 'CE 00' is your w
+rists, '98 00' is whats on your head, the following two, '00 00' are your neck slot, and '90 01' are on your feet. I pause here because the next three are your belt slots, the three slots on the right hand side of your character picture, they are the thre
+e sets of '00 00' shown above. The next slot, 'C4 01' is your left ring slot, and it finishes up with 'C5 01' which is your right ring slot. 
+	All of those are basic and simple, as long as you know what items to plug in. A word of warning though: Make sure you put only rings in the ring slots. If you put anything else in there, the game will crash when you go to open the character portrait. Als
+o, the quiver is a bit screwy. I've plugged a lot of different values in there and it changes every time. It's possible to put anything in the quiver, I've pulled two-handed swords out of it before. But the quiver works differently than the rest of the it
+ems. The hex sets which bring up an arrow are actually sets of arrows. Meaning, if you find that the codes '4F 00' and '55 02' are both arrow pictures in your inventory, chances are that one of those is actually a set of arrows, and that the value of that
+ set only shows up if the arrow is put in the quiver slot. Basically, the quiver is confusing as all hell and you shouldn't mess with it too much. 
+	Now, as I promised, I compiled a short list of items that -seem- to be the same no matter what. I've only listed the ones useful to a new party or to someone stuck somewhere. Like I said before, you might put in the value for +5 bracers of protection and
+ get a rock, but.... In any case, you -can- look at your other characters. If one of your characters has those +5 bracers and you want to clone them, just put the bracers in your first characters backpack, find it in the hex sets and copy the code a few t
+imes in the rest of your backpack slots. Thats probably the easiest way to go about spreading the wealth. Anyway, here's that list:
+  
+0A 00 - Iron Rations
+11 00 - Grey Key
+12 00 - Copper Key
+18 00 - Potion of Giant Strength
+1D 00 - Skull Key
+1E 00 - Darkmoon Key
+27 00 - Stone Gem Protal Key
+28 00 - Stone Dagger Portal Key
+29 00 - Stone Orb Portal Key
+2A 00 - Stone Cross Portal Key
+2B 00 - Stone Necklace Portal Key
+33 00 - Composite Bow
+40 00 - Bone Key
+44 00 - Red Gem
+45 00 - Green Gem
+46 00 - Blue Gem
+47 00 - Purple Gem
+48 00 - Mantis Key
+49 00 - Mantis Idol
+4A 00 - Polished Shield
+4C 00 - Eye of Talon
+4D 00 - Crystal Key
+4E 00 - Shell Key
+4F 00 - Tooth key
+50 00 - Crimson Key
+51 00 - Talon's Tounge
+52 00 - Hilt of Talon
+53 00 - Crystal Hammer
+54 00 - Starfire Sceptre
+56 00 - Crimson Ring
+5C 00 - Sceptre of Kingly Might
+5E 00 - Coin
+5F 00 - Amulet of Life
+75 00 - Cleric Scroll of Raise Dead
+7C 00 - Rotten Food
+7F 00 - Magic Dust
+86 00 - +2 Short Sword "Sting"
+8F 00 - Potion of Cure Poison
+95 00 - Plate Mail +2
+CE 00 - Bracers of Protection +5
+E7 00 - +3 Cloak "Moonshade"
+E8 00 - +2 Arrow (Just make a bunch of them in your backpack)
+04 01 - Troplet Seed
+12 01 - Potion of Extra Healing
+13 01 - Potion of Vitality
+1F 01 - +3 Plate Mail
+2A 01 - Long Sword "Hunger"
+41 01 - Short Sword +3
+
+There are a few more that worked most of the time, but not with each party I tried. It seems that the lower numbers are all the same, since they are for the most part very basic items. As you go up, the items get increasingly less stable between parties. 
+If worse comes to worse, you can just flip back and forth between the game and Diskedit, plugging in each value one at a time. If you use the two hand slots and all the backpack slots, thats 16 items you can find out about at once. And doing it that way, 
+you'd only have to go thru the process 48 times... 
+
+	I hope this helps you gamers out there... If you find something else that you want to make a note of or you want to trade some other help files like this back and forth or anything like that, drop me some email. That address about should be mine for quit
+e a while. And if you can't find me there, just look up Maelwys on the Web. Chances are, you'll find me if you work at it a bit. 
+
+	Happy gaming!
+	Maelwys Goldenmoon 

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<savegame>
+	<dungeon name="EOB_2" />
+	<slot id="0" name="slot 0">
+		<team>
+			<location maze="Temple - 01" x="15" y="11" direction="West" position="NorthEast" />
+			<position slot="FrontLeft">
+				<hero name="Allabar">
+					<hitpoint current="16" max="23" />
+					<strength value="12" />
+					<intelligence value="14" />
+					<wisdom value="13" />
+					<dexterity value="8" />
+					<constitution value="10" />
+					<charisma value="13" />
+					<alignment value="NeutralGood" />
+					<movespeed value="0" />
+					<quiver count="24" />
+					<head id="27" />
+					<food value="100" />
+					<race value="Human" />
+					<gender value="Male" />
+					<profession>
+						<class name="Fighter" />
+						<xp points="98324" />
+					</profession>
+					<profession>
+						<class name="Paladin" />
+						<xp points="32505" />
+					</profession>
+					<inventory position="Primary" name="short sword" />
+					<waist position="0" name="rock" />
+					<waist position="1" name="rock" />
+					<waist position="2" name="rock" />
+				</hero>
+			</position>
+			<position slot="FrontRight">
+				<hero name="Ariel">
+					<hitpoint current="26" max="31" />
+					<strength value="13" />
+					<intelligence value="12" />
+					<wisdom value="14" />
+					<dexterity value="15" />
+					<constitution value="10" />
+					<charisma value="6" />
+					<alignment value="ChaoticGood" />
+					<movespeed value="0" />
+					<quiver count="0" />
+					<head id="21" />
+					<food value="86" />
+					<race value="Dwarf" />
+					<gender value="Male" />
+					<profession>
+						<class name="Fighter" />
+						<xp points="0" />
+					</profession>
+					<profession>
+						<class name="Thief" />
+						<xp points="0" />
+					</profession>
+					<inventory position="Secondary" name="grey key" />
+					<inventory position="Primary" name="short sword" />
+					<backpack position="0" name="grey key" />
+					<backpack position="1" name="grey key" />
+					<backpack position="2" name="grey key" />
+					<backpack position="3" name="grey key" />
+					<backpack position="4" name="grey key" />
+					<backpack position="5" name="grey key" />
+					<backpack position="6" name="grey key" />
+					<backpack position="7" name="grey key" />
+					<backpack position="8" name="grey key" />
+					<backpack position="9" name="boots" />
+					<backpack position="10" name="grey key" />
+					<backpack position="11" name="grey key" />
+					<backpack position="12" name="grey key" />
+				</hero>
+			</position>
+			<position slot="MiddleLeft">
+				<hero name="Valanau">
+					<hitpoint current="6" max="34" />
+					<strength value="6" />
+					<intelligence value="12" />
+					<wisdom value="12" />
+					<dexterity value="8" />
+					<constitution value="13" />
+					<charisma value="9" />
+					<alignment value="LawfulNeutral" />
+					<movespeed value="0" />
+					<quiver count="0" />
+					<head id="39" />
+					<food value="99" />
+					<race value="Elf" />
+					<gender value="Female" />
+					<profession>
+						<class name="Mage" />
+						<xp points="0" />
+					</profession>
+					<profession>
+						<class name="Thief" />
+						<xp points="0" />
+					</profession>
+					<inventory position="Secondary" name="grey key" />
+					<inventory position="Primary" name="spell book" />
+					<backpack position="4" name="dart" />
+					<backpack position="5" name="dart" />
+					<backpack position="6" name="rock" />
+				</hero>
+			</position>
+			<position slot="MiddleRight">
+				<hero name="TenMiyana">
+					<hitpoint current="15" max="30" />
+					<strength value="10" />
+					<intelligence value="13" />
+					<wisdom value="10" />
+					<dexterity value="13" />
+					<constitution value="13" />
+					<charisma value="11" />
+					<alignment value="LawfulEvil" />
+					<movespeed value="0" />
+					<quiver count="0" />
+					<head id="43" />
+					<food value="88" />
+					<race value="Halfling" />
+					<gender value="Female" />
+					<profession>
+						<class name="Cleric" />
+						<xp points="450010" />
+					</profession>
+					<inventory position="Armor" name="leather armor" />
+					<inventory position="Secondary" name="grey key" />
+					<inventory position="Primary" name="cleric holy symbol" />
+					<inventory position="Helmet" name="helmet" />
+					<backpack position="6" name="light steel shield" />
+				</hero>
+			</position>
+			<message text="Loading maze test" R="101" G="105" B="182" A="255" />
+			<message text="You can't go that way !" R="255" G="255" B="255" A="255" />
+			<message text="You can't go that way !" R="255" G="255" B="255" A="255" />
+		</team>
+	</slot>
+	<slot id="1" name="" />
+	<slot id="2" name="" />
+	<slot id="3" name="" />
+	<slot id="4" name="" />
+	<slot id="5" name="" />
+</savegame>

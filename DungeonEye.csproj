@@ -1,0 +1,998 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF615530-818F-475B-B79D-5ED4A2D01D79}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DungeonEye</RootNamespace>
+    <AssemblyName>DungeonEye</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Any CPU\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Any CPU\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DungeonEye.Game</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.1.24483, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\Libraries\DockPanel\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Actions\SpawnMonsterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\SpawnMonsterControl.Designer.cs">
+      <DependentUpon>SpawnMonsterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\MonsterEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\MonsterEditorControl.Designer.cs">
+      <DependentUpon>MonsterEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\Gui\CampWindows\SaveGameWindow.cs" />
+    <Compile Include="Game\Script\Actions\SpawnMonster.cs" />
+    <Compile Include="SaveGameSlot.cs" />
+    <Compile Include="Forms\AbilityControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AbilityControl.Designer.cs">
+      <DependentUpon>AbilityControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\DisableTargetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\DisableTargetControl.Designer.cs">
+      <DependentUpon>DisableTargetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\EnableTargetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\EnableTargetControl.Designer.cs">
+      <DependentUpon>EnableTargetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\SetToControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\SetToControl.Designer.cs">
+      <DependentUpon>SetToControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\DisplayMessageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\DisplayMessageControl.Designer.cs">
+      <DependentUpon>DisplayMessageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActorChooserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ActorChooserControl.Designer.cs">
+      <DependentUpon>ActorChooserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\AlcoveScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\AlcoveScriptForm.Designer.cs">
+      <DependentUpon>AlcoveScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\AlcoveScriptListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\AlcoveScriptListControl.Designer.cs">
+      <DependentUpon>AlcoveScriptListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\PressurePlateScriptListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\PressurePlateScriptListControl.Designer.cs">
+      <DependentUpon>PressurePlateScriptListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\PressurePlateScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\PressurePlateScriptForm.Designer.cs">
+      <DependentUpon>PressurePlateScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\SquareActorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\SquareActorControl.Designer.cs">
+      <DependentUpon>SquareActorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\WallScriptScriptListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\WallScriptScriptListControl.Designer.cs">
+      <DependentUpon>WallScriptScriptListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\AlcoveControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\AlcoveControl.Designer.cs">
+      <DependentUpon>AlcoveControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\WallSwitchScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\WallSwitchScriptForm.Designer.cs">
+      <DependentUpon>WallSwitchScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\MazePropertiesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\MazePropertiesControl.Designer.cs">
+      <DependentUpon>MazePropertiesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\MazePropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\MazePropertiesForm.Designer.cs">
+      <DependentUpon>MazePropertiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CardinalPointControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CardinalPointControl.Designer.cs">
+      <DependentUpon>CardinalPointControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\DecorationSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\DecorationSetForm.Designer.cs">
+      <DependentUpon>DecorationSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\DoorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\DoorControl.Designer.cs">
+      <DependentUpon>DoorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EventActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EventActionForm.Designer.cs">
+      <DependentUpon>EventActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EventChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EventChoiceForm.Designer.cs">
+      <DependentUpon>EventChoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\ForceFieldControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\ForceFieldControl.Designer.cs">
+      <DependentUpon>ForceFieldControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\GeneratorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\GeneratorControl.Designer.cs">
+      <DependentUpon>GeneratorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\HeroControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\HeroControl.Designer.cs">
+      <DependentUpon>HeroControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DiceControl.Designer.cs">
+      <DependentUpon>DiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\DungeonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\DungeonForm.Designer.cs">
+      <DependentUpon>DungeonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EntityControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\EntityControl.Designer.cs">
+      <DependentUpon>EntityControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\HeroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\HeroForm.Designer.cs">
+      <DependentUpon>HeroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HitPointControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\HitPointControl.Designer.cs">
+      <DependentUpon>HitPointControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\ItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\ItemForm.Designer.cs">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DungeonLocationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DungeonLocationControl.Designer.cs">
+      <DependentUpon>DungeonLocationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DungeonLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DungeonLocationForm.Designer.cs">
+      <DependentUpon>DungeonLocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\LauncherControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\LauncherControl.Designer.cs">
+      <DependentUpon>LauncherControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\MonsterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\MonsterControl.Designer.cs">
+      <DependentUpon>MonsterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\MonsterEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\MonsterEditorForm.Designer.cs">
+      <DependentUpon>MonsterEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\MonsterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\MonsterForm.Designer.cs">
+      <DependentUpon>MonsterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\MonsterGeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\MonsterGeneratorForm.Designer.cs">
+      <DependentUpon>MonsterGeneratorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PartyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PartyForm.Designer.cs">
+      <DependentUpon>PartyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\PitControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\PitControl.Designer.cs">
+      <DependentUpon>PitControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\PressurePlateControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\PressurePlateControl.Designer.cs">
+      <DependentUpon>PressurePlateControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProfessionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProfessionsControl.Designer.cs">
+      <DependentUpon>ProfessionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\ActionChooserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\ActionChooserControl.Designer.cs">
+      <DependentUpon>ActionChooserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\EndDialogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\EndDialogControl.Designer.cs">
+      <DependentUpon>EndDialogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\EndChoiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\EndChoiceControl.Designer.cs">
+      <DependentUpon>EndChoiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\EnableChoiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\EnableChoiceControl.Designer.cs">
+      <DependentUpon>EnableChoiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\DisableChoiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\DisableChoiceControl.Designer.cs">
+      <DependentUpon>DisableChoiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\PlaySoundControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\PlaySoundControl.Designer.cs">
+      <DependentUpon>PlaySoundControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\ChangePictureControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\ChangePictureControl.Designer.cs">
+      <DependentUpon>ChangePictureControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\ToggleTargetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\ToggleTargetControl.Designer.cs">
+      <DependentUpon>ToggleTargetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\DeactivateTargetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\DeactivateTargetControl.Designer.cs">
+      <DependentUpon>DeactivateTargetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\ActionBaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\ActionBaseControl.Designer.cs">
+      <DependentUpon>ActionBaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ScriptedDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScriptedDialogForm.Designer.cs">
+      <DependentUpon>ScriptedDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\ActivateTargetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\ActivateTargetControl.Designer.cs">
+      <DependentUpon>ActivateTargetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\ChangeTextControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\ChangeTextControl.Designer.cs">
+      <DependentUpon>ChangeTextControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\GiveExperienceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\GiveExperienceControl.Designer.cs">
+      <DependentUpon>GiveExperienceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\GiveItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\GiveItemControl.Designer.cs">
+      <DependentUpon>GiveItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\HealingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\HealingControl.Designer.cs">
+      <DependentUpon>HealingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\JoinCharacterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\JoinCharacterControl.Designer.cs">
+      <DependentUpon>JoinCharacterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actions\TeleportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actions\TeleportControl.Designer.cs">
+      <DependentUpon>TeleportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\SpellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\SpellForm.Designer.cs">
+      <DependentUpon>SpellForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EventSquareControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\EventSquareControl.Designer.cs">
+      <DependentUpon>EventSquareControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SquareControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\SquareControl.Designer.cs">
+      <DependentUpon>SquareControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\StairControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\StairControl.Designer.cs">
+      <DependentUpon>StairControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SquareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SquareForm.Designer.cs">
+      <DependentUpon>SquareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SwitchCountControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\SwitchCountControl.Designer.cs">
+      <DependentUpon>SwitchCountControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TargetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TargetControl.Designer.cs">
+      <DependentUpon>TargetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\TeleporterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\TeleporterControl.Designer.cs">
+      <DependentUpon>TeleporterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewFieldControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewFieldControl.Designer.cs">
+      <DependentUpon>ViewFieldControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Actor\WallSwitchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Actor\WallSwitchControl.Designer.cs">
+      <DependentUpon>WallSwitchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Wizards\NewItemWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\NewItemWizard.Designer.cs">
+      <DependentUpon>NewItemWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Wizards\NewMazeWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\NewMazeWizard.Designer.cs">
+      <DependentUpon>NewMazeWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Wizards\NewNameWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\NewNameWizard.Designer.cs">
+      <DependentUpon>NewNameWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameSettings.cs" />
+    <Compile Include="Game\Decoration.cs" />
+    <Compile Include="Game\GameColors.cs" />
+    <Compile Include="Game\Gui\CampWindows\LoadGameWindow.cs" />
+    <Compile Include="Game\Script\Actions\ActionBase.cs" />
+    <Compile Include="Game\Script\Actions\EnableTarget.cs" />
+    <Compile Include="Game\Script\Actions\SetTo.cs" />
+    <Compile Include="Game\Script\Actions\DisplayMessage.cs" />
+    <Compile Include="Game\Script\ScriptBase.cs" />
+    <Compile Include="Game\Script\Actions\ActivateTarget.cs" />
+    <Compile Include="Game\Script\Actions\ChangePicture.cs" />
+    <Compile Include="Game\Script\Actions\ChangeText.cs" />
+    <Compile Include="Game\Script\Actions\DeactivateTarget.cs" />
+    <Compile Include="Game\Script\Actions\DisableChoice.cs" />
+    <Compile Include="Game\Script\Actions\DisableTarget.cs" />
+    <Compile Include="Game\Script\Actions\EnableChoice.cs" />
+    <Compile Include="Game\Script\Actions\EndChoice.cs" />
+    <Compile Include="Game\Script\Actions\EndDialog.cs" />
+    <Compile Include="Game\Script\Actions\GiveExperience.cs" />
+    <Compile Include="Game\Script\Actions\GiveItem.cs" />
+    <Compile Include="Game\Script\Actions\Healing.cs" />
+    <Compile Include="Game\Script\Actions\JoinCharacter.cs" />
+    <Compile Include="Game\Script\Actions\PlaySound.cs" />
+    <Compile Include="Game\Script\Actions\Teleport.cs" />
+    <Compile Include="Game\Script\Actions\ToggleTarget.cs" />
+    <Compile Include="Game\Script\AlcoveScript.cs" />
+    <Compile Include="Game\Script\GUI\GUIScriptButton.cs" />
+    <Compile Include="Game\Script\PressurePlateScript.cs" />
+    <Compile Include="Game\Script\GUI\ScriptChoice.cs" />
+    <Compile Include="Game\Script\WallSwitchScript.cs" />
+    <Compile Include="Game\SquareActor\AlcoveActor.cs" />
+    <Compile Include="Game\Alcove.cs" />
+    <Compile Include="Game\SquareActor\Generator.cs" />
+    <Compile Include="Game\SquareActor\Launcher.cs" />
+    <Compile Include="Game\SquareActor\WallSwitch.cs" />
+    <Compile Include="Game\SwitchCount.cs" />
+    <Compile Include="Game\ViewField.cs" />
+    <Compile Include="Interfaces\IDoor.cs" />
+    <Compile Include="Interfaces\IFloorPlate.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Interfaces\IMonster.cs" />
+    <Compile Include="Interfaces\IPit.cs" />
+    <Compile Include="Interfaces\IMazeZone.cs" />
+    <Compile Include="Interfaces\ISpell.cs" />
+    <Compile Include="Game\Ability.cs" />
+    <Compile Include="Game\Attack.cs" />
+    <Compile Include="Game\AutoMap.cs" />
+    <Compile Include="CharGen.cs" />
+    <Compile Include="Game\CriticalHit.cs" />
+    <Compile Include="Game\Defense.cs" />
+    <Compile Include="Game\DialogBase.cs" />
+    <Compile Include="Game\Entity.cs" />
+    <Compile Include="Game\Gui\CampWindows\DropCharacterWindow.cs" />
+    <Compile Include="Game\Gui\CampWindows\SpellWindow.cs" />
+    <Compile Include="Game\Gui\CampWindows\GameOptionsWindow.cs" />
+    <Compile Include="Game\Gui\CampWindows\PreferencesWindow.cs" />
+    <Compile Include="Game\Gui\CampWindows\ScribeScrollsWindow.cs" />
+    <Compile Include="Game\Gui\CampWindows\RestPartyWindow.cs" />
+    <Compile Include="Game\Gui\CampWindows\MainWindow.cs" />
+    <Compile Include="Game\Gui\GUI.cs" />
+    <Compile Include="Game\Gui\MessageBox.cs" />
+    <Compile Include="Game\HandAction.cs" />
+    <Compile Include="Game\MazeZone.cs" />
+    <Compile Include="Game\GameMessage.cs" />
+    <Compile Include="Game\MonsterStates\MonsterState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Game\MonsterStates\Attack.cs" />
+    <Compile Include="Game\MonsterStates\Hurt.cs" />
+    <Compile Include="Game\MonsterStates\Move.cs" />
+    <Compile Include="Game\MonsterStates\Idle.cs" />
+    <Compile Include="Game\Profession.cs" />
+    <Compile Include="Game\HitPoint.cs" />
+    <Compile Include="Game\SavingThrow.cs" />
+    <Compile Include="Game\ScriptedDialog.cs" />
+    <Compile Include="Game\SquareActor\EventSquare.cs" />
+    <Compile Include="Game\SquareActor\SquareActor.cs" />
+    <Compile Include="Game\Team.cs" />
+    <Compile Include="Game\WallButton.cs" />
+    <Compile Include="Game\DisplayCoordinates.cs" />
+    <Compile Include="Game\Compass.cs" />
+    <Compile Include="IntroScreen.cs" />
+    <Compile Include="Game\ThrownItem.cs" />
+    <Compile Include="Game\SpellBook.cs" />
+    <Compile Include="Game\Gui\Window.cs" />
+    <Compile Include="OptionMenu.cs" />
+    <Compile Include="Game\Dice.cs" />
+    <Compile Include="Game\SquareActor\Door.cs" />
+    <Compile Include="Game\Dungeon.cs" />
+    <Compile Include="DungeonEye.cs" />
+    <Compile Include="Game\DungeonLocation.cs" />
+    <Compile Include="Game\SquareActor\PressurePlate.cs" />
+    <Compile Include="Game\Gui\ScreenButton.cs" />
+    <Compile Include="Game\CampDialog.cs" />
+    <Compile Include="Game\SquareActor\ForceField.cs" />
+    <Compile Include="Game\Item.cs" />
+    <Compile Include="MainMenu.cs" />
+    <Compile Include="Game\Maze.cs">
+    </Compile>
+    <Compile Include="Game\Hero.cs" />
+    <Compile Include="Game\Square.cs" />
+    <Compile Include="Game\Monster.cs" />
+    <Compile Include="Game\SquareActor\Pit.cs" />
+    <Compile Include="Game\ScreenMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveGame.cs" />
+    <EmbeddedResource Include="Forms\AbilityControl.resx">
+      <DependentUpon>AbilityControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\SpawnMonsterControl.resx">
+      <DependentUpon>SpawnMonsterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\DisableTargetControl.resx">
+      <DependentUpon>DisableTargetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\EnableTargetControl.resx">
+      <DependentUpon>EnableTargetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\SetToControl.resx">
+      <DependentUpon>SetToControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\DisplayMessageControl.resx">
+      <DependentUpon>DisplayMessageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActorChooserControl.resx">
+      <DependentUpon>ActorChooserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\AlcoveScriptForm.resx">
+      <DependentUpon>AlcoveScriptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\AlcoveScriptListControl.resx">
+      <DependentUpon>AlcoveScriptListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\PressurePlateScriptListControl.resx">
+      <DependentUpon>PressurePlateScriptListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\PressurePlateScriptForm.resx">
+      <DependentUpon>PressurePlateScriptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\SquareActorControl.resx">
+      <DependentUpon>SquareActorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\WallScriptScriptListControl.resx">
+      <DependentUpon>WallScriptScriptListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\AlcoveControl.resx">
+      <DependentUpon>AlcoveControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\WallSwitchScriptForm.resx">
+      <DependentUpon>WallSwitchScriptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\MonsterEditorControl.resx">
+      <DependentUpon>MonsterEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\MazePropertiesControl.resx">
+      <DependentUpon>MazePropertiesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\MazePropertiesForm.resx">
+      <DependentUpon>MazePropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CardinalPointControl.resx">
+      <DependentUpon>CardinalPointControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\DecorationSetForm.resx">
+      <DependentUpon>DecorationSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\DoorControl.resx">
+      <DependentUpon>DoorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EventActionForm.resx">
+      <DependentUpon>EventActionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EventChoiceForm.resx">
+      <DependentUpon>EventChoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\ForceFieldControl.resx">
+      <DependentUpon>ForceFieldControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\GeneratorControl.resx">
+      <DependentUpon>GeneratorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\HeroControl.resx">
+      <DependentUpon>HeroControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\DungeonForm.resx">
+      <DependentUpon>DungeonForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\LauncherControl.resx">
+      <DependentUpon>LauncherControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\MonsterEditorForm.resx">
+      <DependentUpon>MonsterEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\MonsterGeneratorForm.resx">
+      <DependentUpon>MonsterGeneratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PartyForm.resx">
+      <DependentUpon>PartyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\PitControl.resx">
+      <DependentUpon>PitControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\PressurePlateControl.resx">
+      <DependentUpon>PressurePlateControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProfessionsControl.resx">
+      <DependentUpon>ProfessionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScriptedDialogForm.resx">
+      <DependentUpon>ScriptedDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\ActionChooserControl.resx">
+      <DependentUpon>ActionChooserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\EndDialogControl.resx">
+      <DependentUpon>EndDialogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\EndChoiceControl.resx">
+      <DependentUpon>EndChoiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\EnableChoiceControl.resx">
+      <DependentUpon>EnableChoiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\DisableChoiceControl.resx">
+      <DependentUpon>DisableChoiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\PlaySoundControl.resx">
+      <DependentUpon>PlaySoundControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\ChangePictureControl.resx">
+      <DependentUpon>ChangePictureControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\ToggleTargetControl.resx">
+      <DependentUpon>ToggleTargetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\DeactivateTargetControl.resx">
+      <DependentUpon>DeactivateTargetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\ActivateTargetControl.resx">
+      <DependentUpon>ActivateTargetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\ChangeTextControl.resx">
+      <DependentUpon>ChangeTextControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\GiveExperienceControl.resx">
+      <DependentUpon>GiveExperienceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\GiveItemControl.resx">
+      <DependentUpon>GiveItemControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\HealingControl.resx">
+      <DependentUpon>HealingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\JoinCharacterControl.resx">
+      <DependentUpon>JoinCharacterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actions\TeleportControl.resx">
+      <DependentUpon>TeleportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\SpellForm.resx">
+      <DependentUpon>SpellForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EventSquareControl.resx">
+      <DependentUpon>EventSquareControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SquareControl.resx">
+      <DependentUpon>SquareControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\StairControl.resx">
+      <DependentUpon>StairControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SquareForm.resx">
+      <DependentUpon>SquareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SwitchCountControl.resx">
+      <DependentUpon>SwitchCountControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TargetControl.resx">
+      <DependentUpon>TargetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\TeleporterControl.resx">
+      <DependentUpon>TeleporterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewFieldControl.resx">
+      <DependentUpon>ViewFieldControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Actor\WallSwitchControl.resx">
+      <DependentUpon>WallSwitchControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="data\Game.bnk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Game\Spell.cs" />
+    <Compile Include="Game\SquareActor\Stair.cs" />
+    <Compile Include="GameScreen.cs">
+    </Compile>
+    <Compile Include="Game\SquareActor\Teleporter.cs" />
+    <Compile Include="Game\DecorationSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="credits.txt" />
+    <Content Include="data\settings.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="data\savegame.xml" />
+    <EmbeddedResource Include="Forms\data\editor.png" />
+    <EmbeddedResource Include="Forms\DiceControl.resx">
+      <DependentUpon>DiceControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EntityControl.resx">
+      <DependentUpon>EntityControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\HeroForm.resx">
+      <DependentUpon>HeroForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HitPointControl.resx">
+      <DependentUpon>HitPointControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\ItemForm.resx">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DungeonLocationControl.resx">
+      <DependentUpon>DungeonLocationControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DungeonLocationForm.resx">
+      <DependentUpon>DungeonLocationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\MonsterControl.resx">
+      <DependentUpon>MonsterControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\MonsterForm.resx">
+      <DependentUpon>MonsterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\NewItemWizard.resx">
+      <DependentUpon>NewItemWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\NewMazeWizard.resx">
+      <DependentUpon>NewMazeWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\NewNameWizard.resx">
+      <DependentUpon>NewNameWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Intro\" />
+    <Folder Include="Option\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\ArcEngine.csproj">
+      <Project>{9931BDE3-41D2-4065-9595-37020DD45E8D}</Project>
+      <Name>ArcEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
