@@ -140,12 +140,17 @@ namespace DungeonEye
 		/// <param name="batch">Spritebatch handle</param>
 		public override void Draw(SpriteBatch batch)
 		{
+			Point offset = new Point(1, 1);
+
 			// Border
 			if (Event.DisplayBorder)
+			{
 				batch.Draw(Border, Point.Empty, Color.White);
+				offset.Offset(16, 16);
+			}
 
 			// Picture
-			batch.Draw(Picture, new Point(16, 16), Color.White);
+			batch.Draw(Picture, offset, Color.White);
 
 			// Text
 			GUI.DrawSimpleBevel(batch, DisplayCoordinates.ScriptedDialog);

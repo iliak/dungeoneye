@@ -798,11 +798,11 @@ namespace DungeonEye
 				((CampDialog)Dialog).AddWindow(new Gui.CampWindows.LoadGameWindow(Dialog as CampDialog));
 			}
 
-			if (Team.Location == null) return;
+			if (Team.Location == null)
+				return;
 
 
 			#region Change maze
-			// Change maze
 			for (int i = 0; i < 12; i++)
 			{
 				if (Keyboard.IsNewKeyPress(Keys.F1 + i))
@@ -837,14 +837,14 @@ namespace DungeonEye
 
 			#region Team move & managment
 
-			// Display inventory
-			if (Keyboard.IsNewKeyPress(InputScheme["Inventory"]))
-			{
-				if (Interface == TeamInterface.Inventory)
-					Interface = TeamInterface.Main;
-				else
-					Interface = TeamInterface.Inventory;
-			}
+			//// Display inventory
+			//if (Keyboard.IsNewKeyPress(InputScheme["Inventory"]))
+			//{
+			//	if (Interface == TeamInterface.Inventory)
+			//		Interface = TeamInterface.Main;
+			//	else
+			//		Interface = TeamInterface.Inventory;
+			//}
 
 
 			// Turn left
@@ -875,29 +875,27 @@ namespace DungeonEye
 			if (Keyboard.IsNewKeyPress(InputScheme["StrafeRight"]))
 				Team.Walk(1, 0);
 
-			// Select Hero 1
-			if (Keyboard.IsNewKeyPress(InputScheme["SelectHero1"]))
-				Team.SelectedHero = Team.Heroes[0];
+			//// Select Hero
+			//for (int i = 0; i < Team.HeroCount; i++)
+			//{
+			//	Keys key = InputScheme[string.Format("SelectHero{0}", i + 1)];
+			//             if (Keyboard.IsNewKeyPress(key))
+			//	{
+			//		if (Team.SelectedHero == Team.Heroes[i] && Interface != TeamInterface.Inventory)
+			//		{
+			//			Interface = TeamInterface.Inventory;
+			//			Keyboard.ConsumeNewKeyPress(key);
+			//		}
+			//		else if (Team.SelectedHero != Team.Heroes[i])
+			//		{
+			//			Team.SelectedHero = Team.Heroes[i];
+			//			//Keyboard.ConsumeNewKeyPress(key);
+			//		}
+			//	}
+			//}
 
-			// Select Hero 2
-			if (Keyboard.IsNewKeyPress(InputScheme["SelectHero2"]))
-				Team.SelectedHero = Team.Heroes[1];
 
-			// Select Hero 3
-			if (Keyboard.IsNewKeyPress(InputScheme["SelectHero3"]))
-				Team.SelectedHero = Team.Heroes[2];
 
-			// Select Hero 4
-			if (Keyboard.IsNewKeyPress(InputScheme["SelectHero4"]))
-				Team.SelectedHero = Team.Heroes[3];
-
-			// Select Hero 5
-			if (Keyboard.IsNewKeyPress(InputScheme["SelectHero5"]) && Team.HeroCount >= 5)
-				Team.SelectedHero = Team.Heroes[4];
-
-			// Select Hero 6
-			if (Keyboard.IsNewKeyPress(InputScheme["SelectHero6"]) && Team.HeroCount >= 6)
-				Team.SelectedHero = Team.Heroes[5];
 			#endregion
 
 
@@ -906,7 +904,6 @@ namespace DungeonEye
 
 			SquarePosition groundpos = SquarePosition.NorthEast;
 			Point mousePos = Mouse.Location;
-			//never used : Point pos = Point.Empty;
 
 			// Get the square at team position
 			Square square = Team.Maze.GetSquare(Team.Location.Coordinate);
@@ -923,7 +920,7 @@ namespace DungeonEye
 				if (InterfaceCoord.TurnLeft.Contains(mousePos))
 					Team.Location.Direction = Compass.Rotate(Team.Location.Direction, CompassRotation.Rotate270);
 
-				// MoveForward
+				// Move Forward
 				else if (InterfaceCoord.MoveForward.Contains(mousePos))
 					Team.Walk(0, -1);
 
@@ -1324,149 +1321,156 @@ namespace DungeonEye
 
 
 			#region Interface actions
-
-			if (Interface == TeamInterface.Inventory)
+			switch (Interface)
 			{
-				UpdateInventory(time);
-			}
-			else if (Interface == TeamInterface.Statistic)
-			{
-				UpdateStatistics(time);
-			}
-			else
-			{
-				#region Left mouse button action
-
-
-				// Left mouse button down
-				if (Mouse.IsNewButtonDown(MouseButtons.Left) && Dialog == null)
+				case TeamInterface.Inventory:
 				{
-
-					Item item = null;
-
-					// Update each hero interface
-					for (int id = 0; id < 6; id++)
-					{
-						// Get the hero
-						Hero hero = Team.Heroes[id];
-						if (hero == null)
-							continue;
-
-						#region Select hero
-						if (InterfaceCoord.SelectHero[id].Contains(mousePos))
-							Team.SelectedHero = hero;
-						#endregion
-
-						#region Swap hero
-						if (InterfaceCoord.HeroFace[id].Contains(mousePos))
-						{
-							Team.SelectedHero = hero;
-							HeroToSwap = null;
-							Interface = TeamInterface.Inventory;
-						}
-						#endregion
-
-						#region Take object in primary hand
-						if (InterfaceCoord.PrimaryHand[id].Contains(mousePos)) // && hero.CanUseHand(HeroHand.Primary))
-						{
-							item = hero.GetInventoryItem(InventoryPosition.Primary);
-
-							if (Team.ItemInHand != null && ((Team.ItemInHand.Slot & BodySlot.Primary) == BodySlot.Primary))
-							{
-								Item swap = Team.ItemInHand;
-								Team.SetItemInHand(hero.GetInventoryItem(InventoryPosition.Primary));
-								hero.SetInventoryItem(InventoryPosition.Primary, swap);
-							}
-							else if (Team.ItemInHand == null && item != null)
-							{
-								Team.SetItemInHand(item);
-								hero.SetInventoryItem(InventoryPosition.Primary, null);
-							}
-						}
-						#endregion
-
-						#region Take object in secondary hand
-						if (InterfaceCoord.SecondaryHand[id].Contains(mousePos)) // && hero.CanUseHand(HeroHand.Secondary))
-						{
-							item = hero.GetInventoryItem(InventoryPosition.Secondary);
-
-							if (Team.ItemInHand != null && ((Team.ItemInHand.Slot & BodySlot.Secondary) == BodySlot.Secondary))
-							{
-								Item swap = Team.ItemInHand;
-								Team.SetItemInHand(hero.GetInventoryItem(InventoryPosition.Secondary));
-								hero.SetInventoryItem(InventoryPosition.Secondary, swap);
-
-							}
-							else if (Team.ItemInHand == null && item != null)
-							{
-								Team.SetItemInHand(item);
-								hero.SetInventoryItem(InventoryPosition.Secondary, null);
-							}
-						}
-						#endregion
-					}
-
-
+					UpdateInventory(time);
 				}
+				break;
 
-				#endregion
-
-				#region Right mouse button action
-
-				// Right mouse button down
-				if (Mouse.IsNewButtonDown(MouseButtons.Right) && Dialog == null)
+				case TeamInterface.Statistic:
 				{
-
-					// Update each hero interface
-					for (int id = 0; id < 6; id++)
-					{
-						// Get the hero
-						Hero hero = Team.Heroes[id];
-						if (hero == null)
-							continue;
-
-
-						#region Swap hero
-						if (InterfaceCoord.SelectHero[id].Contains(mousePos))
-						{
-							if (HeroToSwap == null)
-							{
-								HeroToSwap = hero;
-							}
-							else
-							{
-								Team.Heroes[(int)Team.GetHeroPosition(HeroToSwap)] = hero;
-								Team.Heroes[id] = HeroToSwap;
-
-
-								HeroToSwap = null;
-							}
-						}
-						#endregion
-
-						#region Show Hero inventory
-						if (InterfaceCoord.HeroFace[id].Contains(mousePos))
-						{
-							Team.SelectedHero = hero;
-							Interface = TeamInterface.Inventory;
-						}
-						#endregion
-
-						#region Use object in primary hand
-						if (InterfaceCoord.PrimaryHand[id].Contains(mousePos) && hero.CanUseHand(HeroHand.Primary))
-							hero.UseHand(HeroHand.Primary);
-
-						#endregion
-
-						#region Use object in secondary hand
-						if (InterfaceCoord.SecondaryHand[id].Contains(mousePos) && hero.CanUseHand(HeroHand.Secondary))
-							hero.UseHand(HeroHand.Secondary);
-						#endregion
-					}
+					UpdateStatistics(time);
 				}
-				#endregion
-			}
+				break;
 
+				default:
+				{
+					UpdateMain(time);
+					//#region Left mouse button action
+
+
+					//// Left mouse button down
+					//if (Mouse.IsNewButtonDown(MouseButtons.Left) && Dialog == null)
+					//{
+
+					//	Item item = null;
+
+					//	// Update each hero interface
+					//	for (int id = 0; id < 6; id++)
+					//	{
+					//		// Get the hero
+					//		Hero hero = Team.Heroes[id];
+					//		if (hero == null)
+					//			continue;
+
+					//		#region Select hero
+					//		if (InterfaceCoord.SelectHero[id].Contains(mousePos))
+					//			Team.SelectedHero = hero;
+					//		#endregion
+
+					//		#region Swap hero
+					//		if (InterfaceCoord.HeroFace[id].Contains(mousePos))
+					//		{
+					//			Team.SelectedHero = hero;
+					//			HeroToSwap = null;
+					//			Interface = TeamInterface.Inventory;
+					//		}
+					//		#endregion
+
+					//		#region Take object in primary hand
+					//		if (InterfaceCoord.PrimaryHand[id].Contains(mousePos)) // && hero.CanUseHand(HeroHand.Primary))
+					//		{
+					//			item = hero.GetInventoryItem(InventoryPosition.Primary);
+
+					//			if (Team.ItemInHand != null && ((Team.ItemInHand.Slot & BodySlot.Primary) == BodySlot.Primary))
+					//			{
+					//				Item swap = Team.ItemInHand;
+					//				Team.SetItemInHand(hero.GetInventoryItem(InventoryPosition.Primary));
+					//				hero.SetInventoryItem(InventoryPosition.Primary, swap);
+					//			}
+					//			else if (Team.ItemInHand == null && item != null)
+					//			{
+					//				Team.SetItemInHand(item);
+					//				hero.SetInventoryItem(InventoryPosition.Primary, null);
+					//			}
+					//		}
+					//		#endregion
+
+					//		#region Take object in secondary hand
+					//		if (InterfaceCoord.SecondaryHand[id].Contains(mousePos)) // && hero.CanUseHand(HeroHand.Secondary))
+					//		{
+					//			item = hero.GetInventoryItem(InventoryPosition.Secondary);
+
+					//			if (Team.ItemInHand != null && ((Team.ItemInHand.Slot & BodySlot.Secondary) == BodySlot.Secondary))
+					//			{
+					//				Item swap = Team.ItemInHand;
+					//				Team.SetItemInHand(hero.GetInventoryItem(InventoryPosition.Secondary));
+					//				hero.SetInventoryItem(InventoryPosition.Secondary, swap);
+
+					//			}
+					//			else if (Team.ItemInHand == null && item != null)
+					//			{
+					//				Team.SetItemInHand(item);
+					//				hero.SetInventoryItem(InventoryPosition.Secondary, null);
+					//			}
+					//		}
+					//		#endregion
+					//	}
+
+
+					//}
+
+					//#endregion
+
+					//#region Right mouse button action
+
+					//// Right mouse button down
+					//if (Mouse.IsNewButtonDown(MouseButtons.Right) && Dialog == null)
+					//{
+
+					//	// Update each hero interface
+					//	for (int id = 0; id < 6; id++)
+					//	{
+					//		// Get the hero
+					//		Hero hero = Team.Heroes[id];
+					//		if (hero == null)
+					//			continue;
+
+
+					//		#region Swap hero
+					//		if (InterfaceCoord.SelectHero[id].Contains(mousePos))
+					//		{
+					//			if (HeroToSwap == null)
+					//			{
+					//				HeroToSwap = hero;
+					//			}
+					//			else
+					//			{
+					//				Team.Heroes[(int)Team.GetHeroPosition(HeroToSwap)] = hero;
+					//				Team.Heroes[id] = HeroToSwap;
+
+
+					//				HeroToSwap = null;
+					//			}
+					//		}
+					//		#endregion
+
+					//		#region Show Hero inventory
+					//		if (InterfaceCoord.HeroFace[id].Contains(mousePos))
+					//		{
+					//			Team.SelectedHero = hero;
+					//			Interface = TeamInterface.Inventory;
+					//		}
+					//		#endregion
+
+					//		#region Use object in primary hand
+					//		if (InterfaceCoord.PrimaryHand[id].Contains(mousePos) && hero.CanUseHand(HeroHand.Primary))
+					//			hero.UseHand(HeroHand.Primary);
+
+					//		#endregion
+
+					//		#region Use object in secondary hand
+					//		if (InterfaceCoord.SecondaryHand[id].Contains(mousePos) && hero.CanUseHand(HeroHand.Secondary))
+					//			hero.UseHand(HeroHand.Secondary);
+					//		#endregion
+					//	}
+					//}
+					//#endregion
+				}
+				break;
+			}
 			#endregion
 
 
@@ -1511,13 +1515,248 @@ namespace DungeonEye
 			Interface = TeamInterface.Main;
 		}
 
+		/// <summary>
+		/// Create a game with new team and new dungeon
+		/// </summary>
+		/// <param name="theteam">the team</param>
+		/// <param name="thedungeon">the dungeon or null to start default one</param>
+		public void NewGame(Team theteam, Dungeon thedungeon)
+		{
+			if (theteam == null)
+				throw new ArgumentNullException("theteam");
+
+			// Load dungeon
+			if (Dungeon != null)
+				Dungeon.Dispose();
+			Dungeon = thedungeon ?? ResourceManager.CreateAsset<Dungeon>("EOB_2");
+			Dungeon.Init();
+
+			// Load team
+			if (Team != null)
+				Team.Dispose();
+			Team = theteam;
+			Team.Init();
+
+			GameMessage.Clear();
+			GameMessage.AddMessage("New party starting...", GameColors.Yellow);
+
+		}
+
 
 		/// <summary>
-		/// Updates inventory
+		/// Create a game with new team and the default dungeon
+		/// </summary>
+		/// <param name="theteam">the team</param>
+		public void NewGame(Team theteam)
+		{
+			NewGame(theteam, null);
+		}
+
+
+		/// <summary>
+		/// Updates main interface
+		/// </summary>
+		/// <param name="time">Elapsed game time</param>
+		void UpdateMain(GameTime time)
+		{
+
+			// Display inventory
+			if (Keyboard.IsNewKeyPress(InputScheme["Inventory"]))
+			{
+				Interface = TeamInterface.Inventory;
+			}
+
+			// Select Hero
+			for (int i = 0; i < Team.HeroCount; i++)
+			{
+				Keys key = InputScheme[string.Format("SelectHero{0}", i + 1)];
+				if (Keyboard.IsNewKeyPress(key))
+				{
+					// Open inventory
+					if (Team.SelectedHero == Team.Heroes[i])
+					{
+						Interface = TeamInterface.Inventory;
+					}
+
+					// Select hero
+					else if (Team.SelectedHero != Team.Heroes[i])
+					{
+						Team.SelectedHero = Team.Heroes[i];
+					}
+				}
+			}
+
+
+			#region Left mouse button action
+
+			Point mousePos = Mouse.Location;
+
+			// Left mouse button down
+			if (Mouse.IsNewButtonDown(MouseButtons.Left) && Dialog == null)
+			{
+
+				Item item = null;
+
+				// Update each hero interface
+				for (int id = 0; id < 6; id++)
+				{
+					// Get the hero
+					Hero hero = Team.Heroes[id];
+					if (hero == null)
+						continue;
+
+					#region Select hero
+					if (InterfaceCoord.SelectHero[id].Contains(mousePos))
+						Team.SelectedHero = hero;
+					#endregion
+
+					#region Swap hero
+					if (InterfaceCoord.HeroFace[id].Contains(mousePos))
+					{
+						Team.SelectedHero = hero;
+						HeroToSwap = null;
+						Interface = TeamInterface.Inventory;
+					}
+					#endregion
+
+					#region Take object in primary hand
+					if (InterfaceCoord.PrimaryHand[id].Contains(mousePos)) // && hero.CanUseHand(HeroHand.Primary))
+					{
+						item = hero.GetInventoryItem(InventoryPosition.Primary);
+
+						if (Team.ItemInHand != null && ((Team.ItemInHand.Slot & BodySlot.Primary) == BodySlot.Primary))
+						{
+							Item swap = Team.ItemInHand;
+							Team.SetItemInHand(hero.GetInventoryItem(InventoryPosition.Primary));
+							hero.SetInventoryItem(InventoryPosition.Primary, swap);
+						}
+						else if (Team.ItemInHand == null && item != null)
+						{
+							Team.SetItemInHand(item);
+							hero.SetInventoryItem(InventoryPosition.Primary, null);
+						}
+					}
+					#endregion
+
+					#region Take object in secondary hand
+					if (InterfaceCoord.SecondaryHand[id].Contains(mousePos)) // && hero.CanUseHand(HeroHand.Secondary))
+					{
+						item = hero.GetInventoryItem(InventoryPosition.Secondary);
+
+						if (Team.ItemInHand != null && ((Team.ItemInHand.Slot & BodySlot.Secondary) == BodySlot.Secondary))
+						{
+							Item swap = Team.ItemInHand;
+							Team.SetItemInHand(hero.GetInventoryItem(InventoryPosition.Secondary));
+							hero.SetInventoryItem(InventoryPosition.Secondary, swap);
+
+						}
+						else if (Team.ItemInHand == null && item != null)
+						{
+							Team.SetItemInHand(item);
+							hero.SetInventoryItem(InventoryPosition.Secondary, null);
+						}
+					}
+					#endregion
+				}
+
+
+			}
+
+			#endregion
+
+			#region Right mouse button action
+
+			// Right mouse button down
+			if (Mouse.IsNewButtonDown(MouseButtons.Right) && Dialog == null)
+			{
+
+				// Update each hero interface
+				for (int id = 0; id < 6; id++)
+				{
+					// Get the hero
+					Hero hero = Team.Heroes[id];
+					if (hero == null)
+						continue;
+
+
+					#region Swap hero
+					if (InterfaceCoord.SelectHero[id].Contains(mousePos))
+					{
+						if (HeroToSwap == null)
+						{
+							HeroToSwap = hero;
+						}
+						else
+						{
+							Team.Heroes[(int)Team.GetHeroPosition(HeroToSwap)] = hero;
+							Team.Heroes[id] = HeroToSwap;
+
+
+							HeroToSwap = null;
+						}
+					}
+					#endregion
+
+					#region Show Hero inventory
+					if (InterfaceCoord.HeroFace[id].Contains(mousePos))
+					{
+						Team.SelectedHero = hero;
+						Interface = TeamInterface.Inventory;
+					}
+					#endregion
+
+					#region Use object in primary hand
+					if (InterfaceCoord.PrimaryHand[id].Contains(mousePos) && hero.CanUseHand(HeroHand.Primary))
+						hero.UseHand(HeroHand.Primary);
+
+					#endregion
+
+					#region Use object in secondary hand
+					if (InterfaceCoord.SecondaryHand[id].Contains(mousePos) && hero.CanUseHand(HeroHand.Secondary))
+						hero.UseHand(HeroHand.Secondary);
+					#endregion
+				}
+			}
+			#endregion
+
+		}
+
+
+		/// <summary>
+		/// Updates inventory interface
 		/// </summary>
 		/// <param name="time">Elapsed game time</param>
 		void UpdateInventory(GameTime time)
 		{
+
+			#region Keyboard
+
+			// Close interface
+			for (int i = 0; i < Team.HeroCount; i++)
+			{
+				Keys key = InputScheme[string.Format("SelectHero{0}", i + 1)];
+				if (Keyboard.IsNewKeyPress(key))
+				{
+					if (Team.SelectedHero == Team.Heroes[i])
+					{
+						Interface = TeamInterface.Main;
+						break;
+					}
+					Team.SelectedHero = Team.Heroes[i];
+				}
+			}
+
+			// Display inventory
+			if (Keyboard.IsNewKeyPress(InputScheme["Inventory"]))
+			{
+				Interface = TeamInterface.Main;
+			}
+
+
+			#endregion
+
+
+			#region Mouse
 			Point mousePos = Mouse.Location;
 			Item item = null;
 
@@ -1728,52 +1967,14 @@ namespace DungeonEye
 					#endregion
 				}
 			}
-
+			#endregion
 
 
 		}
 
 
 		/// <summary>
-		/// Create a game with new team and new dungeon
-		/// </summary>
-		/// <param name="theteam">the team</param>
-		/// <param name="thedungeon">the dungeon or null to start default one</param>
-		public void NewGame(Team theteam, Dungeon thedungeon)
-		{
-			if (theteam == null)
-				throw new ArgumentNullException("theteam");
-
-			// Load dungeon
-			if (Dungeon != null)
-				Dungeon.Dispose();
-			Dungeon = thedungeon ?? ResourceManager.CreateAsset<Dungeon>("EOB_2");
-			Dungeon.Init();
-
-			// Load team
-			if (Team != null)
-				Team.Dispose();
-			Team = theteam;
-			Team.Init();
-
-			GameMessage.Clear();
-			GameMessage.AddMessage("New party starting...", GameColors.Yellow);
-
-		}
-
-
-		/// <summary>
-		/// Create a game with new team and the default dungeon
-		/// </summary>
-		/// <param name="theteam">the team</param>
-		public void NewGame(Team theteam)
-		{
-			NewGame(theteam, null);
-		}
-
-
-		/// <summary>
-		/// Updates statistics
+		/// Updates statistics interface
 		/// </summary>
 		/// <param name="time">Elapsed game time</param>
 		void UpdateStatistics(GameTime time)

@@ -36,8 +36,8 @@ using ArcEngine.Asset;
 //
 // http://dirkkok.wordpress.com/dungeon-generation-article-series/
 //
-//
-//
+// Walkthrough : http://www.gamewinners.com/walkthrough/eye_of_the_beholder_2/
+//				 http://gigi.nullneuron.net/comp/eob2-walkthrough.php
 
 namespace DungeonEye
 {
