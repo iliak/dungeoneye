@@ -206,17 +206,16 @@ namespace DungeonEye
 
 
 			writer.WriteStartElement(Tag);
-
-			base.Save(writer);
+			writer.WriteAttributeString("team", TeleportTeam.ToString());
+			writer.WriteAttributeString("monsters", TeleportMonsters.ToString());
+			writer.WriteAttributeString("items", TeleportItems.ToString());
+			writer.WriteAttributeString("visible", IsVisible.ToString());
+			writer.WriteAttributeString("reusable", Reusable.ToString());
 
 			if(Target != null)
 				Target.Save("target", writer);
 
-			writer.WriteElementString("teleportteam", TeleportTeam.ToString());
-			writer.WriteElementString("teleportmonsters", TeleportMonsters.ToString());
-			writer.WriteElementString("teleportitems", TeleportItems.ToString());
-			writer.WriteElementString("visible", IsVisible.ToString());
-			writer.WriteElementString("reusable", Reusable.ToString());
+			base.Save(writer);
 
 			writer.WriteEndElement();
 

@@ -287,27 +287,12 @@ namespace DungeonEye
 			if (node == null)
 				return false;
 
+			if (node.Name != "base")
+				return false;
 
-			switch (node.Name)
-			{
-				case "isactivated":
-				{
-					IsActivated = bool.Parse(node.InnerXml);
-				}
-				break;
+			IsActivated = node.Attributes["isactivated"] != null ? bool.Parse(node.Attributes["isactivated"].Value) : false;
+			IsEnabled = node.Attributes["isenabled"] != null ? bool.Parse(node.Attributes["isenabled"].Value) : false;
 
-				case "isenabled":
-				{
-					IsEnabled = bool.Parse(node.InnerXml);
-				}
-				break;
-
-				default:
-				{
-					Trace.WriteLine("[SquareActor] Load() : Unknown node \"" + node.Name + "\" found @ " + Square.Location.ToString() + ".");
-				}
-				break;
-			}
 
 			return true;
 		}
@@ -321,13 +306,24 @@ namespace DungeonEye
 		/// <returns></returns>
 		public virtual bool Save(XmlWriter writer)
 		{
+			try
+			{
+
 			if (writer == null)
 				return false;
 
-			writer.WriteElementString("isactivated", IsActivated.ToString());
-			writer.WriteElementString("isenabled", IsEnabled.ToString());
+			writer.WriteStartElement("actor");
+			writer.WriteAttributeString("isactivated", IsActivated.ToString());
+			writer.WriteAttributeString("isenabled", IsEnabled.ToString());
+			writer.WriteEndElement();
 
 			return true;
+			}
+			catch (Exception e)
+			{
+
+				return false;
+			}
 		}
 
 		#endregion

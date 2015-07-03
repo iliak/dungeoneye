@@ -586,50 +586,18 @@ namespace DungeonEye
 			if (writer == null)
 				return false;
 
-
-			writer.WriteStartElement(Tag);
-
-
-			// Type of door
-			writer.WriteStartElement("type");
-			writer.WriteAttributeString("value", Type.ToString());
-			writer.WriteEndElement();
-
 			// State
-			writer.WriteStartElement("state");
-			writer.WriteAttributeString("value", State.ToString());
-			writer.WriteEndElement();
+			writer.WriteStartElement(Tag);
+			writer.WriteAttributeString("type", Type.ToString());
+			writer.WriteAttributeString("state", State.ToString());
+			writer.WriteAttributeString("isbreakable", IsBreakable.ToString());
+			writer.WriteAttributeString("hasbutton", HasButton.ToString());
+			writer.WriteAttributeString("picklock", PickLock.ToString());
+			writer.WriteAttributeString("speed", Speed.TotalSeconds.ToString());
+			writer.WriteAttributeString("strength", Strength.ToString());
+			writer.WriteAttributeString("smallitempassthrough", SmallItemPassThrough.ToString());
 
-			// 
-			writer.WriteStartElement("isbreakable");
-			writer.WriteAttributeString("value", IsBreakable.ToString());
-			writer.WriteEndElement();
-
-			// 
-			writer.WriteElementString("hasbutton", HasButton.ToString());
-
-			// 
-			writer.WriteStartElement("picklock");
-			writer.WriteAttributeString("value", PickLock.ToString());
-			writer.WriteEndElement();
-
-			// 
-			writer.WriteStartElement("speed");
-			writer.WriteAttributeString("value", Speed.TotalSeconds.ToString());
-			writer.WriteEndElement();
-
-
-			// 
-			writer.WriteStartElement("strength");
-			writer.WriteAttributeString("value", Strength.ToString());
-			writer.WriteEndElement();
-
-			writer.WriteElementString("smallitempassthrough", SmallItemPassThrough.ToString());
-
-			//Count.Save("switch", writer);
-			
 			base.Save(writer);
-
 			writer.WriteEndElement();
 
 			return true;

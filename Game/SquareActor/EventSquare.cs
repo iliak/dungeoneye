@@ -222,64 +222,30 @@ namespace DungeonEye
 
 			writer.WriteStartElement(Tag);
 
-			base.Save(writer);
 			
-			writer.WriteStartElement("messagecolor");
-			writer.WriteAttributeString("value", MessageColor.ToArgb().ToString());
-			writer.WriteEndElement();
-
-			writer.WriteStartElement("mustface");
-			writer.WriteAttributeString("value", MustFace.ToString());
-			writer.WriteEndElement();
-
-			writer.WriteStartElement("direction");
-			writer.WriteAttributeString("value", Direction.ToString());
-			writer.WriteEndElement();
-
-			writer.WriteStartElement("remaining");
-			writer.WriteAttributeString("value", Remaining.ToString());
-			writer.WriteEndElement();
-
-			// 
-			writer.WriteStartElement("soundname");
-			writer.WriteAttributeString("value", SoundName);
-			writer.WriteEndElement();
-
-			// 
-			writer.WriteStartElement("loopsound");
-			writer.WriteAttributeString("value", LoopSound.ToString());
-			writer.WriteEndElement();
-
-			// 
-			writer.WriteStartElement("displayborder");
-			writer.WriteAttributeString("value", DisplayBorder.ToString());
-			writer.WriteEndElement();
-
-			// 
-			writer.WriteStartElement("intelligence");
-			writer.WriteAttributeString("value", Intelligence.ToString());
-			writer.WriteEndElement();
-
-			// 
-			writer.WriteStartElement("message");
-			writer.WriteAttributeString("value", Message);
-			writer.WriteEndElement();
+			writer.WriteAttributeString("color", MessageColor.ToArgb().ToString());
+			writer.WriteAttributeString("mustface", MustFace.ToString());
+			writer.WriteAttributeString("direction", Direction.ToString());
+			writer.WriteAttributeString("remaining", Remaining.ToString());
+			writer.WriteAttributeString("soundname", SoundName);
+			writer.WriteAttributeString("loopsound", LoopSound.ToString());
+			writer.WriteAttributeString("displayborder", DisplayBorder.ToString());
+			writer.WriteAttributeString("intelligence", Intelligence.ToString());
+			writer.WriteAttributeString("message", Message);
+			writer.WriteAttributeString("picturename", PictureName);
 
 			// 
 			writer.WriteStartElement("text");
 			writer.WriteString(Text);
 			writer.WriteEndElement();
 
-			// 
-			writer.WriteStartElement("picturename");
-			writer.WriteAttributeString("value", PictureName);
-			writer.WriteEndElement();
 
 
 			foreach (ScriptChoice choice in Choices)
 				choice.Save(writer);
 
 
+			base.Save(writer);
 			writer.WriteEndElement();
 
 			return true;

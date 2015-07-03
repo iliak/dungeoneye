@@ -149,21 +149,11 @@ namespace DungeonEye
 
 
 			writer.WriteStartElement(Tag);
+			writer.WriteAttributeString("type", Type.ToString());
+			writer.WriteAttributeString("spin", Spin.ToString());
+			writer.WriteAttributeString("direction", Direction.ToString());
 
 			base.Save(writer);
-			
-			writer.WriteStartElement("type");
-			writer.WriteAttributeString("value", Type.ToString());
-			writer.WriteEndElement();
-
-			writer.WriteStartElement("spin");
-			writer.WriteAttributeString("value", Spin.ToString());
-			writer.WriteEndElement();
-
-			writer.WriteStartElement("direction");
-			writer.WriteAttributeString("value", Direction.ToString());
-			writer.WriteEndElement();
-
 
 			writer.WriteEndElement();
 

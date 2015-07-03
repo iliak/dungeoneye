@@ -942,6 +942,21 @@ namespace DungeonEye.Forms
 			Square.NoMonster = NoMonsterBox.Checked;
 		}
 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void InFogBox_CheckedChanged(object sender, EventArgs e)
+		{
+			if (Square == null)
+				return;
+
+			Square.InFog = InFogBox.Checked;
+		}
+
+
 		/// <summary>
 		/// 
 		/// </summary>

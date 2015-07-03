@@ -255,7 +255,6 @@ namespace DungeonEye
 
 			writer.WriteStartElement(Tag);
 
-			base.Save(writer);
 
 			for (int i = 0 ; i < 4 ; i++)
 			{
@@ -267,6 +266,8 @@ namespace DungeonEye
 				Alcoves[i].Save(writer);
 				writer.WriteEndElement();
 			}
+
+			base.Save(writer);
 			writer.WriteEndElement();
 
 			return true;

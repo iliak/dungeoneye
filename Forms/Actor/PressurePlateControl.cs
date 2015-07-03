@@ -72,7 +72,7 @@ namespace DungeonEye.Forms
 				return;
 
 			IsHiddenBox.Checked = PressurePlate.IsHidden;
-			DecorationIdBox.Value = PressurePlate.DecorationID;
+			DecorationIdBox.Value = PressurePlate.DecorationPrimary;
 			WasUsedBox.Checked = PressurePlate.WasUsed;
 			ReusableBox.Checked = PressurePlate.Reusable;
 		}
@@ -94,7 +94,7 @@ namespace DungeonEye.Forms
 
 			// Draw decoration
 			if (DecorationSet != null)
-				DecorationSet.Draw(Batch, PressurePlate.DecorationID, ViewFieldPosition.L);
+				DecorationSet.Draw(Batch, PressurePlate.DecorationPrimary, ViewFieldPosition.L);
 
 			Batch.End();
 
@@ -154,7 +154,7 @@ namespace DungeonEye.Forms
 			if (PressurePlate == null)
 				return;
 
-			PressurePlate.DecorationID = (int) DecorationIdBox.Value;
+			PressurePlate.DecorationPrimary = (int) DecorationIdBox.Value;
 			RenderScene();
 		}
 

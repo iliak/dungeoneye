@@ -57,6 +57,7 @@ namespace DungeonEye
 			Maze = maze;
 			Type = SquareType.Wall;
 			Monsters = new Monster[4];
+			InFog = true;
 
 			Decorations = new int[] { -1, -1, -1, -1 };
 
@@ -329,6 +330,10 @@ namespace DungeonEye
 		/// </summary>
 		public void OnTeamEnter()
 		{
+			// Remove the square from the fog of war
+			InFog = false;
+
+
 			if (Actor != null)
 				Actor.OnTeamEnter();
 		}
@@ -620,25 +625,41 @@ namespace DungeonEye
 			if (writer == null)
 				return false;
 
+			//if (this.Maze != null)
+				//Trace.WriteDebugLine("[SQUARE] {0} - {1}", this.Maze.Name, Location);
+			if (Location.X == 5 && Location.Y == 12)
+			{
+
+			}
 
 			writer.WriteStartElement(Tag);
 
-			// Type of wall
-			writer.WriteStartElement("type");
-			writer.WriteAttributeString("value", Type.ToString());
-			writer.WriteEndElement();
+			writer.WriteAttributeString("x", Location.X.ToString());	// X location
+			writer.WriteAttributeString("y", Location.Y.ToString());	// Y location
+			writer.WriteAttributeString("type", Type.ToString());		// Type of wall
+			if (InFog)
+				writer.WriteAttributeString("infog", InFog.ToString());
+			if (NoGhost)
+				writer.WriteAttributeString("noghost", NoGhost.ToString());
+			if (NoMonster)
+				writer.WriteAttributeString("nomonster", NoMonster.ToString());
+
+
 
 			// Actor
 			if (Actor != null)
 				Actor.Save(writer);
 
 			// Wall decoration
-			writer.WriteStartElement("decoration");
-			writer.WriteAttributeString(CardinalPoint.North.ToString(), GetDecorationId(CardinalPoint.North).ToString());
-			writer.WriteAttributeString(CardinalPoint.South.ToString(), GetDecorationId(CardinalPoint.South).ToString());
-			writer.WriteAttributeString(CardinalPoint.West.ToString(), GetDecorationId(CardinalPoint.West).ToString());
-			writer.WriteAttributeString(CardinalPoint.East.ToString(), GetDecorationId(CardinalPoint.East).ToString());
-			writer.WriteEndElement();
+			if (HasDecorations)
+			{
+				writer.WriteStartElement("decoration");
+				writer.WriteAttributeString(CardinalPoint.North.ToString(), GetDecorationId(CardinalPoint.North).ToString());
+				writer.WriteAttributeString(CardinalPoint.South.ToString(), GetDecorationId(CardinalPoint.South).ToString());
+				writer.WriteAttributeString(CardinalPoint.West.ToString(), GetDecorationId(CardinalPoint.West).ToString());
+				writer.WriteAttributeString(CardinalPoint.East.ToString(), GetDecorationId(CardinalPoint.East).ToString());
+				writer.WriteEndElement();
+			}
 
 			// Items
 			for (int i = 0; i < 4; i++)
@@ -661,20 +682,6 @@ namespace DungeonEye
 					monster.Save(writer);
 			}
 
-			if (NoMonster)
-			{
-				writer.WriteStartElement("nomonster");
-				writer.WriteAttributeString("value", NoMonster.ToString());
-				writer.WriteEndElement();
-			}
-
-			if (NoGhost)
-			{
-				writer.WriteStartElement("noghost");
-				writer.WriteAttributeString("value", NoGhost.ToString());
-				writer.WriteEndElement();
-			}
-
 			writer.WriteEndElement();
 
 			return true;
@@ -694,6 +701,21 @@ namespace DungeonEye
 
 			// A little speedup
 			string[] cardinalnames = Enum.GetNames(typeof(CardinalPoint));
+
+
+			// Attributes of the square
+			InFog = xml.Attributes["infog"] != null;
+			NoMonster = xml.Attributes["nomonster"] != null;
+			NoGhost = xml.Attributes["noghost"] != null;
+
+			if (xml.Attributes["type"] != null)
+			{
+				SquareType tmptype;
+				Enum.TryParse<SquareType>(xml.Attributes["type"].Value, out tmptype);
+				Type = tmptype;
+			}
+			else
+				Type = SquareType.Ground;
 
 			foreach (XmlNode node in xml)
 			{
@@ -718,30 +740,6 @@ namespace DungeonEye
 						Item item = ResourceManager.CreateAsset<Item>(node.Attributes["name"].Value);
 						if (item != null)
 							Items[(int)loc].Add(item);
-					}
-					break;
-
-					case "noghost":
-					{
-						NoGhost = bool.Parse(node.Attributes["value"].Value);
-					}
-					break;
-
-					case "nomonster":
-					{
-						NoMonster = bool.Parse(node.Attributes["value"].Value);
-					}
-					break;
-
-					//case "location":
-					//{
-					//    Location.Load(node);
-					//}
-					//break;
-
-					case "type":
-					{
-						Type = (SquareType)Enum.Parse(typeof(SquareType), node.Attributes["value"].Value, true);
 					}
 					break;
 
@@ -1081,7 +1079,7 @@ namespace DungeonEye
 
 
 		/// <summary>
-		/// Does the block blocks the team
+		/// Does the square blocks the team
 		/// </summary>
 		public bool IsBlocking
 		{
@@ -1116,7 +1114,7 @@ namespace DungeonEye
 
 
 		/// <summary>
-		/// Is an illusion block
+		/// Is an illusion
 		/// </summary>
 		public bool IsIllusion
 		{
@@ -1205,6 +1203,16 @@ namespace DungeonEye
 		/// Marks a square as impassable to any non-material monsters
 		/// </summary>
 		public bool NoGhost
+		{
+			get;
+			set;
+		}
+
+
+		/// <summary>
+		/// Does the square is in the fog of war
+		/// </summary>
+		public bool InFog
 		{
 			get;
 			set;

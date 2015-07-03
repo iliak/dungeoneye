@@ -1515,6 +1515,7 @@ namespace DungeonEye
 			Interface = TeamInterface.Main;
 		}
 
+
 		/// <summary>
 		/// Create a game with new team and new dungeon
 		/// </summary>

@@ -69,7 +69,7 @@ namespace DungeonEye
 			if (td == null)
 				return;
 
-			Decoration.Draw(batch, DecorationID, position);
+			Decoration.Draw(batch, DecorationPrimary, position);
 		}
 
 
@@ -157,7 +157,7 @@ namespace DungeonEye
 
 					case "decoration":
 					{
-						DecorationID = int.Parse(node.Attributes["activated"].Value);
+						DecorationPrimary = int.Parse(node.Attributes["activated"].Value);
 						int.Parse(node.Attributes["deactivated"].Value);
 					}
 					break;
@@ -217,16 +217,12 @@ namespace DungeonEye
 
 			writer.WriteStartElement(Tag);
 
-			base.Save(writer);
 
-			writer.WriteElementString("ishidden", IsHidden.ToString());
-			writer.WriteElementString("reusable", Reusable.ToString());
-			writer.WriteElementString("used", WasUsed.ToString());
-
-			writer.WriteStartElement("decoration");
-			writer.WriteAttributeString("activated", DecorationID.ToString());
-			writer.WriteAttributeString("deactivated", DecorationID.ToString());
-			writer.WriteEndElement();
+			writer.WriteAttributeString("ishidden", IsHidden.ToString());
+			writer.WriteAttributeString("reusable", Reusable.ToString());
+			writer.WriteAttributeString("used", WasUsed.ToString());
+			writer.WriteAttributeString("primary", DecorationPrimary.ToString());
+			writer.WriteAttributeString("secondary", DecorationSecondary.ToString());
 
 			if (Scripts.Count > 0)
 			{
@@ -236,6 +232,7 @@ namespace DungeonEye
 				writer.WriteEndElement();
 			}
 
+			base.Save(writer);
 			writer.WriteEndElement();
 
 			return true;
@@ -366,9 +363,18 @@ namespace DungeonEye
 
 
 		/// <summary>
-		/// Decoration ID
+		/// Decoration ID for primary state
 		/// </summary>
-		public int DecorationID
+		public int DecorationPrimary
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Decoration ID for secondary state
+		/// </summary>
+		public int DecorationSecondary
 		{
 			get;
 			set;

@@ -97,6 +97,10 @@ namespace DungeonEye
 			// Background
 			Batch.DrawTile(Tileset, 1, Point.Empty, Color.White);
 
+			for (int y = 0; y < 20; y++)
+				for (int x = 0; x < 30; x++)
+					Batch.DrawTile(Tileset, 3, new Point(68 + x * 12, 90 + y * 12));
+
 			// Some WIP
 			Batch.DrawString(GUI.MenuFont, new Vector2(100, 100), Color.White, "TODO...");	
 

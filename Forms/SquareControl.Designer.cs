@@ -90,14 +90,15 @@
 			this.NWAddItem = new System.Windows.Forms.Button();
 			this.NWRemoveItem = new System.Windows.Forms.Button();
 			this.TabControlBox = new System.Windows.Forms.TabControl();
+			this.PropertiesTab = new System.Windows.Forms.TabPage();
+			this.label2 = new System.Windows.Forms.Label();
+			this.SquareTypeBox = new System.Windows.Forms.ComboBox();
+			this.NoMonsterBox = new System.Windows.Forms.CheckBox();
+			this.NoGhostBox = new System.Windows.Forms.CheckBox();
 			this.ActorTab = new System.Windows.Forms.TabPage();
 			this.ActorPanelBox = new System.Windows.Forms.Panel();
 			this.DeleteActorBox = new System.Windows.Forms.Button();
-			this.PropertiesTab = new System.Windows.Forms.TabPage();
-			this.NoGhostBox = new System.Windows.Forms.CheckBox();
-			this.NoMonsterBox = new System.Windows.Forms.CheckBox();
-			this.SquareTypeBox = new System.Windows.Forms.ComboBox();
-			this.label2 = new System.Windows.Forms.Label();
+			this.InFogBox = new System.Windows.Forms.CheckBox();
 			this.DecorationTab.SuspendLayout();
 			this.groupBox8.SuspendLayout();
 			this.groupBox7.SuspendLayout();
@@ -116,8 +117,8 @@
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.TabControlBox.SuspendLayout();
-			this.ActorTab.SuspendLayout();
 			this.PropertiesTab.SuspendLayout();
+			this.ActorTab.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// DecorationTab
@@ -816,6 +817,61 @@
 			this.TabControlBox.Size = new System.Drawing.Size(650, 600);
 			this.TabControlBox.TabIndex = 0;
 			// 
+			// PropertiesTab
+			// 
+			this.PropertiesTab.Controls.Add(this.InFogBox);
+			this.PropertiesTab.Controls.Add(this.label2);
+			this.PropertiesTab.Controls.Add(this.SquareTypeBox);
+			this.PropertiesTab.Controls.Add(this.NoMonsterBox);
+			this.PropertiesTab.Controls.Add(this.NoGhostBox);
+			this.PropertiesTab.Location = new System.Drawing.Point(4, 22);
+			this.PropertiesTab.Name = "PropertiesTab";
+			this.PropertiesTab.Size = new System.Drawing.Size(642, 574);
+			this.PropertiesTab.TabIndex = 4;
+			this.PropertiesTab.Text = "Properties";
+			this.PropertiesTab.UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(16, 72);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(51, 13);
+			this.label2.TabIndex = 2;
+			this.label2.Text = "Wall type";
+			// 
+			// SquareTypeBox
+			// 
+			this.SquareTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.SquareTypeBox.FormattingEnabled = true;
+			this.SquareTypeBox.Location = new System.Drawing.Point(73, 69);
+			this.SquareTypeBox.Name = "SquareTypeBox";
+			this.SquareTypeBox.Size = new System.Drawing.Size(121, 21);
+			this.SquareTypeBox.TabIndex = 1;
+			this.SquareTypeBox.SelectedIndexChanged += new System.EventHandler(this.SquareTypeBox_SelectedIndexChanged);
+			// 
+			// NoMonsterBox
+			// 
+			this.NoMonsterBox.AutoSize = true;
+			this.NoMonsterBox.Location = new System.Drawing.Point(73, 46);
+			this.NoMonsterBox.Name = "NoMonsterBox";
+			this.NoMonsterBox.Size = new System.Drawing.Size(81, 17);
+			this.NoMonsterBox.TabIndex = 0;
+			this.NoMonsterBox.Text = "No Monster";
+			this.NoMonsterBox.UseVisualStyleBackColor = true;
+			this.NoMonsterBox.CheckedChanged += new System.EventHandler(this.NoMonsterBox_CheckedChanged);
+			// 
+			// NoGhostBox
+			// 
+			this.NoGhostBox.AutoSize = true;
+			this.NoGhostBox.Location = new System.Drawing.Point(73, 23);
+			this.NoGhostBox.Name = "NoGhostBox";
+			this.NoGhostBox.Size = new System.Drawing.Size(71, 17);
+			this.NoGhostBox.TabIndex = 0;
+			this.NoGhostBox.Text = "No Ghost";
+			this.NoGhostBox.UseVisualStyleBackColor = true;
+			this.NoGhostBox.CheckedChanged += new System.EventHandler(this.NoGhostBox_CheckedChanged);
+			// 
 			// ActorTab
 			// 
 			this.ActorTab.Controls.Add(this.ActorPanelBox);
@@ -851,59 +907,16 @@
 			this.DeleteActorBox.UseVisualStyleBackColor = true;
 			this.DeleteActorBox.Click += new System.EventHandler(this.DeleteActorBox_Click);
 			// 
-			// PropertiesTab
+			// InFogBox
 			// 
-			this.PropertiesTab.Controls.Add(this.label2);
-			this.PropertiesTab.Controls.Add(this.SquareTypeBox);
-			this.PropertiesTab.Controls.Add(this.NoMonsterBox);
-			this.PropertiesTab.Controls.Add(this.NoGhostBox);
-			this.PropertiesTab.Location = new System.Drawing.Point(4, 22);
-			this.PropertiesTab.Name = "PropertiesTab";
-			this.PropertiesTab.Size = new System.Drawing.Size(642, 574);
-			this.PropertiesTab.TabIndex = 4;
-			this.PropertiesTab.Text = "Properties";
-			this.PropertiesTab.UseVisualStyleBackColor = true;
-			// 
-			// NoGhostBox
-			// 
-			this.NoGhostBox.AutoSize = true;
-			this.NoGhostBox.Location = new System.Drawing.Point(73, 23);
-			this.NoGhostBox.Name = "NoGhostBox";
-			this.NoGhostBox.Size = new System.Drawing.Size(71, 17);
-			this.NoGhostBox.TabIndex = 0;
-			this.NoGhostBox.Text = "No Ghost";
-			this.NoGhostBox.UseVisualStyleBackColor = true;
-			this.NoGhostBox.CheckedChanged += new System.EventHandler(this.NoGhostBox_CheckedChanged);
-			// 
-			// NoMonsterBox
-			// 
-			this.NoMonsterBox.AutoSize = true;
-			this.NoMonsterBox.Location = new System.Drawing.Point(73, 46);
-			this.NoMonsterBox.Name = "NoMonsterBox";
-			this.NoMonsterBox.Size = new System.Drawing.Size(81, 17);
-			this.NoMonsterBox.TabIndex = 0;
-			this.NoMonsterBox.Text = "No Monster";
-			this.NoMonsterBox.UseVisualStyleBackColor = true;
-			this.NoMonsterBox.CheckedChanged += new System.EventHandler(this.NoMonsterBox_CheckedChanged);
-			// 
-			// SquareTypeBox
-			// 
-			this.SquareTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.SquareTypeBox.FormattingEnabled = true;
-			this.SquareTypeBox.Location = new System.Drawing.Point(73, 69);
-			this.SquareTypeBox.Name = "SquareTypeBox";
-			this.SquareTypeBox.Size = new System.Drawing.Size(121, 21);
-			this.SquareTypeBox.TabIndex = 1;
-			this.SquareTypeBox.SelectedIndexChanged += new System.EventHandler(this.SquareTypeBox_SelectedIndexChanged);
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(16, 72);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(51, 13);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Wall type";
+			this.InFogBox.AutoSize = true;
+			this.InFogBox.Location = new System.Drawing.Point(197, 23);
+			this.InFogBox.Name = "InFogBox";
+			this.InFogBox.Size = new System.Drawing.Size(85, 17);
+			this.InFogBox.TabIndex = 3;
+			this.InFogBox.Text = "In fog of war";
+			this.InFogBox.UseVisualStyleBackColor = true;
+			this.InFogBox.CheckedChanged += new System.EventHandler(this.InFogBox_CheckedChanged);
 			// 
 			// SquareControl
 			// 
@@ -939,9 +952,9 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.TabControlBox.ResumeLayout(false);
-			this.ActorTab.ResumeLayout(false);
 			this.PropertiesTab.ResumeLayout(false);
 			this.PropertiesTab.PerformLayout();
+			this.ActorTab.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -1017,5 +1030,6 @@
 		private System.Windows.Forms.CheckBox NoGhostBox;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.ComboBox SquareTypeBox;
+		private System.Windows.Forms.CheckBox InFogBox;
 	}
 }

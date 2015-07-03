@@ -189,16 +189,13 @@ namespace DungeonEye
 
 
 			writer.WriteStartElement(Tag);
+			writer.WriteAttributeString("type", Type.ToString());
 
-			base.Save(writer);
-
-			writer.WriteStartElement("type");
-			writer.WriteAttributeString("value", Type.ToString());
-			writer.WriteEndElement();
 
 			if (Target != null)
 				Target.Save("target", writer);
 
+			base.Save(writer);
 			writer.WriteEndElement();
 
 			return true;

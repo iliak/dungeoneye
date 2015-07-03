@@ -335,17 +335,13 @@ namespace DungeonEye
 
 			writer.WriteStartElement(Tag);
 
-
-			writer.WriteStartElement("decoration");
+			writer.WriteAttributeString("side", Side.ToString());
+			writer.WriteAttributeString("reusable", Reusable.ToString());
+			writer.WriteAttributeString("activateitem", NeededItem);
+			writer.WriteAttributeString("consumeitem", ConsumeItem.ToString());
+			writer.WriteAttributeString("picklock", LockLevel.ToString());
 			writer.WriteAttributeString("activated", ActivatedDecoration.ToString());
 			writer.WriteAttributeString("deactivated", DeactivatedDecoration.ToString());
-			writer.WriteEndElement();
-
-			writer.WriteElementString("side", Side.ToString());
-			writer.WriteElementString("reusable", Reusable.ToString());
-			writer.WriteElementString("activateitem", NeededItem);
-			writer.WriteElementString("consumeitem", ConsumeItem.ToString());
-			writer.WriteElementString("picklock", LockLevel.ToString());
 
 			if (Scripts.Count > 0)
 			{
