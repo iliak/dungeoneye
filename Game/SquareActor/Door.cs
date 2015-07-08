@@ -496,6 +496,15 @@ namespace DungeonEye
 			if (xml == null || xml.Name != Tag)
 				return false;
 
+			SmallItemPassThrough = xml.Attributes["smallitempassthrough"] != null ? bool.Parse(xml.Attributes["smallitempassthrough"].Value) : false;
+			IsBreakable = xml.Attributes["isbreakable"] != null ? bool.Parse(xml.Attributes["isbreakable"].Value) : false;
+			HasButton = xml.Attributes["hasbutton"] != null ? bool.Parse(xml.Attributes["hasbutton"].Value) : false;
+			PickLock = xml.Attributes["picklock"] != null ? int.Parse(xml.Attributes["picklock"].Value) : 0;
+			Strength = xml.Attributes["strength"] != null ? int.Parse(xml.Attributes["strength"].Value) : 0;
+			Speed = xml.Attributes["speed"] != null ? TimeSpan.FromSeconds(int.Parse(xml.Attributes["speed"].Value)) : TimeSpan.FromSeconds(1);
+			Type = xml.Attributes["type"] != null ? (DoorType)Enum.Parse(typeof(DoorType), xml.Attributes["type"].Value, true) : DoorType.Temple;
+			State = xml.Attributes["state"] != null ? (DoorState)Enum.Parse(typeof(DoorState), xml.Attributes["state"].Value, true) : DoorState.Closed;
+
 
 			foreach (XmlNode node in xml)
 			{
@@ -505,63 +514,6 @@ namespace DungeonEye
 
 				switch (node.Name.ToLower())
 				{
-					case "smallitempassthrough":
-					{
-						SmallItemPassThrough = bool.Parse(node.InnerText);
-					}
-					break;
-
-					case "type":
-					{
-						Type = (DoorType)Enum.Parse(typeof(DoorType), node.Attributes["value"].Value, true);
-					}
-					break;
-
-					case "state":
-					{
-						State = (DoorState)Enum.Parse(typeof(DoorState), node.Attributes["value"].Value, true);
-						if (State == DoorState.Opened)
-							VPosition = -30;
-					}
-					break;
-
-					case "isbreakable":
-					{
-						IsBreakable = Boolean.Parse(node.Attributes["value"].Value);
-					}
-					break;
-
-
-					case "hasbutton":
-					{
-						HasButton = bool.Parse(node.InnerText);
-					}
-					break;
-
-					case "picklock":
-					{
-						PickLock = int.Parse(node.Attributes["value"].Value);
-					}
-					break;
-
-					case "speed":
-					{
-						Speed = TimeSpan.FromSeconds(int.Parse(node.Attributes["value"].Value));
-					}
-					break;
-
-					case "strength":
-					{
-						Strength = int.Parse(node.Attributes["value"].Value);
-					}
-					break;
-
-					//case "switch":
-					//{
-					//    Count.Load(node);
-					//}
-					//break;
-
 					default:
 					{
 						base.Load(node);
@@ -571,6 +523,8 @@ namespace DungeonEye
 			}
 
 
+			if (State == DoorState.Opened)
+				VPosition = -30;
 
 			return true;
 		}

@@ -139,6 +139,12 @@ namespace DungeonEye
 			if (xml == null || xml.Name != Tag)
 				return false;
 
+			IsVisible = xml.Attributes["visible"] != null ? bool.Parse(xml.Attributes["visible"].Value) : false;
+			TeleportTeam = xml.Attributes["team"] != null ? bool.Parse(xml.Attributes["team"].Value) : false;
+			TeleportItems = xml.Attributes["items"] != null ? bool.Parse(xml.Attributes["items"].Value) : false;
+			TeleportMonsters = xml.Attributes["monster"] != null ? bool.Parse(xml.Attributes["monster"].Value) : false;
+			Reusable = xml.Attributes["resuable"] != null ? bool.Parse(xml.Attributes["reusable"].Value) : false;
+
 			foreach (XmlNode node in xml)
 			{
 				switch (node.Name.ToLower())
@@ -147,37 +153,6 @@ namespace DungeonEye
 					{
 						Target = new DungeonLocation();
 						Target.Load(node);
-					}
-					break;
-
-					case "visible":
-					{
-						IsVisible = bool.Parse(node.InnerText);
-					}
-					break;
-
-
-					case "teleportteam":
-					{
-						TeleportTeam = bool.Parse(node.InnerText);
-					}
-					break;
-
-					case "teleportmonsters":
-					{
-						TeleportMonsters = bool.Parse(node.InnerText);
-					}
-					break;
-
-					case "teleportitems":
-					{
-						TeleportItems = bool.Parse(node.InnerText);
-					}
-					break;
-
-					case "reusable":
-					{
-						Reusable = bool.Parse(node.InnerText);
 					}
 					break;
 

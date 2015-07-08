@@ -258,6 +258,13 @@ namespace DungeonEye
 			if (xml == null || xml.Name != Tag)
 				return false;
 
+			ConsumeItem = xml.Attributes["consumeitem"] != null ? bool.Parse(xml.Attributes["consumeitem"].Value) : false;
+			Reusable = xml.Attributes["reusable"] != null ? bool.Parse(xml.Attributes["reusable"].Value) : false;
+			Side = xml.Attributes["side"] != null ? (CardinalPoint)Enum.Parse(typeof(CardinalPoint),xml.Attributes["side"].Value) : CardinalPoint.North;
+			NeededItem = xml.Attributes["activateitem"] != null ? xml.Attributes["activateitem"].Value : string.Empty;
+			LockLevel = xml.Attributes["picklock"] != null ? int.Parse(xml.Attributes["picklock"].Value) : 0;
+
+
 			foreach (XmlNode node in xml)
 			{
 				switch (node.Name.ToLower())
@@ -266,36 +273,6 @@ namespace DungeonEye
 					{
 						ActivatedDecoration = int.Parse(node.Attributes["activated"].Value);
 						DeactivatedDecoration = int.Parse(node.Attributes["deactivated"].Value);
-					}
-					break;
-
-					case "consumeitem":
-					{
-						ConsumeItem = bool.Parse(node.InnerText);
-					}
-					break;
-
-					case "reusable":
-					{
-						Reusable = bool.Parse(node.InnerText);
-					}
-					break;
-
-					case "side":
-					{
-						Side = (CardinalPoint)Enum.Parse(typeof(CardinalPoint), node.InnerText);
-					}
-					break;
-
-					case "activateitem":
-					{
-						NeededItem = node.InnerText;
-					}
-					break;
-
-					case "picklock":
-					{
-						LockLevel = int.Parse(node.InnerText);
 					}
 					break;
 

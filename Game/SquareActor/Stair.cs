@@ -147,6 +147,8 @@ namespace DungeonEye
 			if (xml == null || xml.Name != Tag)
 				return false;
 
+			Type = xml.Attributes["type"] != null ? (StairType)Enum.Parse(typeof(StairType), xml.Attributes["type"].Value) : StairType.Up;
+
 			foreach (XmlNode node in xml)
 			{
 				switch (node.Name.ToLower())
@@ -155,13 +157,6 @@ namespace DungeonEye
 					{
 						Target = new DungeonLocation();
 						Target.Load(node);
-					}
-					break;
-
-
-					case "type":
-					{
-						Type = (StairType)Enum.Parse(typeof(StairType), node.Attributes["value"].Value);
 					}
 					break;
 

@@ -150,30 +150,16 @@ namespace DungeonEye
 			if (xml == null || xml.Name != Tag)
 				return false;
 
+			IsHidden = xml.Attributes["hidden"] != null ? bool.Parse(xml.Attributes["hidden"].Value) : false;
+			Reusable = xml.Attributes["reusable"] != null ? bool.Parse(xml.Attributes["reusable"].Value) : false;
+			WasUsed = xml.Attributes["used"] != null ? bool.Parse(xml.Attributes["used"].Value) : false;
+			DecorationPrimary = xml.Attributes["primary"] != null ? int.Parse(xml.Attributes["primary"].Value) : -1;
+			DecorationSecondary = xml.Attributes["secondary"] != null ? int.Parse(xml.Attributes["secondary"].Value) : -1;
+
 			foreach (XmlNode node in xml)
 			{
 				switch (node.Name.ToLower())
 				{
-
-					case "decoration":
-					{
-						DecorationPrimary = int.Parse(node.Attributes["activated"].Value);
-						int.Parse(node.Attributes["deactivated"].Value);
-					}
-					break;
-
-					case "reusable":
-					{
-						Reusable = bool.Parse(node.InnerText);
-					}
-					break;
-
-					case "ishidden":
-					{
-						IsHidden = bool.Parse(node.InnerText);
-					}
-					break;
-
 					case "scripts":
 					{
 						foreach (XmlNode sub in node)
@@ -182,12 +168,6 @@ namespace DungeonEye
 							script.Load(sub);
 							Scripts.Add(script);
 						}
-					}
-					break;
-
-					case "used":
-					{
-						WasUsed = bool.Parse(node.InnerText);
 					}
 					break;
 
@@ -218,7 +198,7 @@ namespace DungeonEye
 			writer.WriteStartElement(Tag);
 
 
-			writer.WriteAttributeString("ishidden", IsHidden.ToString());
+			writer.WriteAttributeString("hidden", IsHidden.ToString());
 			writer.WriteAttributeString("reusable", Reusable.ToString());
 			writer.WriteAttributeString("used", WasUsed.ToString());
 			writer.WriteAttributeString("primary", DecorationPrimary.ToString());

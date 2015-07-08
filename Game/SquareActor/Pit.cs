@@ -124,10 +124,8 @@ namespace DungeonEye
 			if (xml == null || xml.Name != Tag)
 				return false;
 
-			if (xml.Attributes["hidden"] != null)
-				IsHidden = bool.Parse(xml.Attributes["hidden"].Value);
-			if (xml.Attributes["difficulty"] != null)
-				Difficulty = int.Parse(xml.Attributes["difficulty"].Value);
+			IsHidden = xml.Attributes["hidden"] != null ? bool.Parse(xml.Attributes["hidden"].Value) : false;
+			Difficulty = xml.Attributes["difficulty"] != null ? int.Parse(xml.Attributes["difficulty"].Value) : 0;
 
 			foreach (XmlNode node in xml)
 			{
@@ -173,8 +171,6 @@ namespace DungeonEye
 			writer.WriteStartElement(Tag);
 			writer.WriteAttributeString("hidden", IsHidden.ToString());
 			writer.WriteAttributeString("difficulty", Difficulty.ToString());
-
-
 
 			if (Target != null)
 				Target.Save("target", writer);

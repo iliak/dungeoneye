@@ -112,6 +112,16 @@ namespace DungeonEye
 			if (xml == null || xml.Name != Tag)
 				return false;
 
+			MessageColor = xml.Attributes["color"] != null ? Color.FromArgb(int.Parse(xml.Attributes["color"].Value)) : Color.White;
+			MustFace = xml.Attributes["mustface"] != null ? bool.Parse(xml.Attributes["mustface"].Value) : false;
+			Direction = xml.Attributes["direction"] != null ? (CardinalPoint)Enum.Parse(typeof(CardinalPoint), xml.Attributes["direction"].Value) : CardinalPoint.North;
+			SoundName = xml.Attributes["soundname"] != null ? xml.Attributes["soundname"].Value : string.Empty;
+			LoopSound = xml.Attributes["loopsound"] != null ? bool.Parse(xml.Attributes["loopsound"].Value) : false;
+			DisplayBorder = xml.Attributes["displayborder"] != null ? bool.Parse(xml.Attributes["displayborder"].Value) : false;
+			Message = xml.Attributes["message"] != null ? xml.Attributes["message"].Value : string.Empty;
+			PictureName = xml.Attributes["picturename"] != null ? xml.Attributes["picturename"].Value : string.Empty;
+			Intelligence = xml.Attributes["intelligence"] != null ? int.Parse(xml.Attributes["intelligence"].Value) : 0;
+			Remaining = xml.Attributes["remaining"] != null ? int.Parse(xml.Attributes["remaining"].Value) : 0;
 
 			foreach (XmlNode node in xml)
 			{
@@ -126,66 +136,6 @@ namespace DungeonEye
 						ScriptChoice choice = new ScriptChoice("");
 						choice.Load(node);
 						Choices.Add(choice);
-					}
-					break;
-
-					case "messagecolor":
-					{
-						MessageColor = Color.FromArgb(int.Parse(node.Attributes["value"].Value));
-					}
-					break;
-
-					case "mustface":
-					{
-						MustFace = Boolean.Parse(node.Attributes["value"].Value);
-					}
-					break;
-
-					case "direction":
-					{
-						Direction = (CardinalPoint) Enum.Parse(typeof(CardinalPoint), node.Attributes["value"].Value);
-					}
-					break;
-
-					case "soundname":
-					{
-						SoundName = node.Attributes["value"].Value;
-					}
-					break;
-
-					case "loopsound":
-					{
-						LoopSound = Boolean.Parse(node.Attributes["value"].Value);
-					}
-					break;
-
-					case "displayborder":
-					{
-						DisplayBorder = Boolean.Parse(node.Attributes["value"].Value);
-					}
-					break;
-
-					case "message":
-					{
-						Message = node.Attributes["value"].Value;
-					}
-					break;
-
-					case "picturename":
-					{
-						PictureName = node.Attributes["value"].Value;
-					}
-					break;
-
-					case "intelligence":
-					{
-						Intelligence = int.Parse(node.Attributes["value"].Value);
-					}
-					break;
-
-					case "remaining":
-					{
-						Remaining = int.Parse(node.Attributes["value"].Value);
 					}
 					break;
 

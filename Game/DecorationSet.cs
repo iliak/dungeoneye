@@ -179,15 +179,12 @@ namespace DungeonEye
 		/// <returns></returns>
 		public bool Load(XmlNode xml)
 		{
-
-			if (xml == null)
-				return false;
-
-			if (xml.Name != XmlTag)
+			if (xml == null || xml.Name != XmlTag)
 				return false;
 
 			Name = xml.Attributes["name"].Value;
-
+			BackgroundTileset = xml.Attributes["background"] != null ? xml.Attributes["background"].Value : string.Empty;
+			TileSetName = xml.Attributes["tileset"] != null ? xml.Attributes["tileset"].Value : string.Empty;
 			foreach (XmlNode node in xml)
 			{
 				if (node.NodeType == XmlNodeType.Comment)
@@ -196,12 +193,6 @@ namespace DungeonEye
 
 				switch (node.Name.ToLower())
 				{
-					case "tileset":
-					{
-						LoadTileSet(node.Attributes["name"].Value);
-					}
-					break;
-
 					case "decoration":
 					{
 						Decoration deco = new Decoration();
@@ -210,16 +201,12 @@ namespace DungeonEye
 						Decorations[id] = deco;
 					}
 					break;
-
-					case "editor":
-					{
-						BackgroundTileset = node.Attributes["tileset"].Value;
-					}
-					break;
-
 				}
 			}
 
+
+			// Load tileset
+			LoadTileSet(TileSetName);
 
 
 			return true;
@@ -240,14 +227,8 @@ namespace DungeonEye
 
 			writer.WriteStartElement(XmlTag);
 			writer.WriteAttributeString("name", Name);
-
-			writer.WriteStartElement("tileset");
-			writer.WriteAttributeString("name", TileSetName);
-			writer.WriteEndElement();
-
-			writer.WriteStartElement("editor");
-			writer.WriteAttributeString("tileset", BackgroundTileset);
-			writer.WriteEndElement();
+			writer.WriteAttributeString("tileset", TileSetName);
+			writer.WriteAttributeString("background", BackgroundTileset);
 
 			foreach (KeyValuePair<int, Decoration> val in Decorations)
 				val.Value.Save(writer, val.Key);
