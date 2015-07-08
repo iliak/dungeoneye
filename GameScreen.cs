@@ -131,11 +131,19 @@ namespace DungeonEye
 
 			GameMessage.Dispose();
 
-			ResourceManager.UnlockSharedAsset<BitmapFont>(OutlinedFont);
-			ResourceManager.UnlockSharedAsset<BitmapFont>(InventoryFont);
 			ResourceManager.UnlockSharedAsset<TileSet>(TileSet);
+			if (TileSet != null)
+				TileSet.Dispose();
 			TileSet = null;
+
+			ResourceManager.UnlockSharedAsset<BitmapFont>(InventoryFont);
+			if (InventoryFont != null)
+				InventoryFont.Dispose();
 			InventoryFont = null;
+
+			ResourceManager.UnlockSharedAsset<BitmapFont>(OutlinedFont);
+			if (OutlinedFont != null)
+				OutlinedFont.Dispose();
 			OutlinedFont = null;
 
 

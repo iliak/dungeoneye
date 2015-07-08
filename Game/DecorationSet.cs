@@ -141,6 +141,8 @@ namespace DungeonEye
 			if (string.IsNullOrEmpty(name))
 				return false;
 
+			if (Tileset != null)
+				Tileset.Dispose();
 			Tileset = ResourceManager.CreateAsset<TileSet>(TileSetName);
 
 			return Tileset != null;

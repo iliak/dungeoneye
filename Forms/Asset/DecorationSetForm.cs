@@ -66,6 +66,7 @@ namespace DungeonEye.Forms
 		{
 			if (BgTileSet != null)
 				BgTileSet.Dispose();
+			BgTileSet = null;
 
 			if (string.IsNullOrEmpty(name))
 				return false;
@@ -315,7 +316,6 @@ namespace DungeonEye.Forms
 			// Background tileset
 			if (list.Contains(DecorationSet.BackgroundTileset))
 				BackgroundTileSetBox.SelectedItem = DecorationSet.BackgroundTileset;
-
 			else if (BackgroundTileSetBox.Items.Count > 0)
 			{
 				ChangeBackgroundTileSet((string) BackgroundTileSetBox.Items[0]);
@@ -346,7 +346,8 @@ namespace DungeonEye.Forms
 		/// <param name="e"></param>
 		private void DecorationForm_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			DrawTimer.Dispose();
+			if (DrawTimer != null)
+				DrawTimer.Dispose();
 			DrawTimer = null;
 
 			if (Batch != null)
@@ -356,6 +357,18 @@ namespace DungeonEye.Forms
 			if (BgTileSet != null)
 				BgTileSet.Dispose();
 			BgTileSet = null;
+
+			if (DecorationSet != null)
+				DecorationSet.Dispose();
+			DecorationSet = null;
+
+			if (ItemTileset != null)
+				ItemTileset.Dispose();
+			ItemTileset = null;
+
+			if (OpenGLBox != null)
+				OpenGLBox.Dispose();
+			OpenGLBox = null;
 
 		}
 

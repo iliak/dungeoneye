@@ -178,20 +178,35 @@ namespace DungeonEye
 
 
 			ResourceManager.UnlockSharedAsset<TileSet>(DoorTileset);
+			if (DoorTileset != null)
+				DoorTileset.Dispose();
 			DoorTileset = null;
 
 			ResourceManager.UnlockSharedAsset<DecorationSet>(Decoration);
+			if (Decoration != null)
+				Decoration.Dispose();
 			Decoration = null;
 
 			ResourceManager.UnlockSharedAsset<TileSet>(WallTileset);
+			if (WallTileset != null)
+				WallTileset.Dispose();
 			WallTileset = null;
 
 			Squares.Clear();
 			Description = null;
+			
 			Dungeon = null;
+
 			ThrownItems.Clear();
+			
+			if (Decoration != null)
+				Decoration.Dispose();
 			DecorationName = null;
+
+			if (WallTileset != null)
+				WallTileset.Dispose();
 			WallTilesetName = null;
+
 			size = Size.Empty;
 			Zones.Clear();
 			Name = "";

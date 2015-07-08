@@ -1321,20 +1321,29 @@ namespace DungeonEye
 			writer.WriteAttributeString("name", AttackSoundName);
 			writer.WriteEndElement();
 
-			writer.WriteStartElement("sound");
-			writer.WriteAttributeString("event", "hurt");
-			writer.WriteAttributeString("name", HurtSoundName);
-			writer.WriteEndElement();
+			if (HurtSoundName != null)
+			{
+				writer.WriteStartElement("sound");
+				writer.WriteAttributeString("event", "hurt");
+				writer.WriteAttributeString("name", HurtSoundName);
+				writer.WriteEndElement();
+			}
 
-			writer.WriteStartElement("sound");
-			writer.WriteAttributeString("event", "walk");
-			writer.WriteAttributeString("name", MoveSoundName);
-			writer.WriteEndElement();
+			if (MoveSoundName != null)
+			{
+				writer.WriteStartElement("sound");
+				writer.WriteAttributeString("event", "walk");
+				writer.WriteAttributeString("name", MoveSoundName);
+				writer.WriteEndElement();
+			}
 
+			if (DieSoundName != null)
+			{
 			writer.WriteStartElement("sound");
 			writer.WriteAttributeString("event", "die");
 			writer.WriteAttributeString("name", DieSoundName);
 			writer.WriteEndElement();
+			}
 
 			writer.WriteStartElement("behaviour");
 			writer.WriteAttributeString("default", DefaultBehaviour.ToString());
