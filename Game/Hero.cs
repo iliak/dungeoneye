@@ -82,7 +82,7 @@ namespace DungeonEye
 			HandPenality[0] = DateTime.Now;
 			HandPenality[1] = DateTime.Now;
 
-			Food = (byte)Game.Random.Next(80, 100);
+            Food = (byte)Game.Random.Next(80, 101);
 
 		}
 
@@ -321,7 +321,7 @@ namespace DungeonEye
 					return 0;
 				}
 
-				bonus = Math.Max(bonus, Game.Random.Next(data[prof.Level * 2], data[prof.Level * 2 + 1]));
+				bonus = Math.Max(bonus, Game.Random.Next(data[prof.Level * 2], 1 + data[prof.Level * 2 + 1]));
 			}
 
 			return bonus;
