@@ -82,7 +82,7 @@ namespace DungeonEye
 			HandPenality[0] = DateTime.Now;
 			HandPenality[1] = DateTime.Now;
 
-			Food = (byte)Game.Random.Next(80, 100);
+            Food = (byte)Game.Random.Next(80, 101);
 
 		}
 
@@ -103,7 +103,7 @@ namespace DungeonEye
 		{
 			base.RollAbilities();
 
-			AddExperience(69000);
+			SetExperience(69000);
 		}
 
 
@@ -147,15 +147,34 @@ namespace DungeonEye
 					GameMessage.AddMessage(Name + " gained a level in " + prof.Class + " !");
 				}
 			}
-
-
 		}
 
+        /// <summary>
+        /// Sets hero experience to a specific value. 
+        /// </summary>
+        /// <param name="amount">XP to add</param>
+        public void SetExperience(int amount)
+        {
+            if (Professions.Count == 0)
+                return;
 
-		/// <summary>
-		/// Gets a new HP bonus according to professions
-		/// </summary>
-		public int GetNewHPBonus()
+            List<Profession> oldProfessions = Professions;
+            Professions = new List<Profession>();
+
+            var xp = amount / oldProfessions.Count;
+            
+            // Reset XP to 0
+            foreach (Profession prof in oldProfessions)
+                Professions.Add(new Profession(0, prof.Class));
+
+            AddExperience(amount);
+        }
+
+
+        /// <summary>
+        /// Gets a new HP bonus according to professions
+        /// </summary>
+        public int GetNewHPBonus()
 		{
 
 			#region Fighter
@@ -302,7 +321,7 @@ namespace DungeonEye
 					return 0;
 				}
 
-				bonus = Math.Max(bonus, Game.Random.Next(data[prof.Level * 2], data[prof.Level * 2 + 1]));
+				bonus = Math.Max(bonus, Game.Random.Next(data[prof.Level * 2], 1 + data[prof.Level * 2 + 1]));
 			}
 
 			return bonus;

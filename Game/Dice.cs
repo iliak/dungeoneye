@@ -75,8 +75,9 @@ namespace DungeonEye
 
 			int val = 0;
 
+            // parameter maxValue is exclusive in Random.Next, thus Faces + 1
 			for (int i = 0; i < rolls; i++)
-				val += Random.Next(1, Faces);
+				val += Random.Next(1, Faces + 1);
 
 
 			return val + Modifier;
@@ -131,9 +132,10 @@ namespace DungeonEye
 		{
 			int res = 0;
 
-			for (int i = 0; i < count; i++)
+            // parameter maxValue is exclusive in Random.Next, thus 21 for a D20
+            for (int i = 0; i < count; i++)
 			{
-				res += Random.Next(1, 20);
+				res += Random.Next(1, 21);
 			}
 
 			return res;

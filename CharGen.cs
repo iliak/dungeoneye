@@ -416,52 +416,21 @@ namespace DungeonEye
 				case CharGenStates.SelectClass:
 				{
 					Point point = new Point(304, 0);
-					for (int i = 0; i < 9; i++)
+
+                    var currentAllowedClasses = AllowedClass[CurrentHero.Race];
+                    for (int i = 0; i < currentAllowedClasses.Count(); i++)
 					{
 						point.Y = 160 + i * 18;
 						if (new Rectangle(point.X, point.Y, 324, 16).Contains(Mouse.Location) && Mouse.IsNewButtonDown(MouseButtons.Left))
 						{
 							CurrentHero.Professions.Clear();
-
-							switch (i)
-							{
-								case 0:
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Fighter));
-								break;
-								case 1:
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Ranger));
-								break;
-								case 2:
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Mage));
-								break;
-								case 3:
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Cleric));
-								break;
-								case 4:
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Thief));
-								break;
-								case 5:
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Fighter));
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Thief));
-								break;
-								case 6:
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Fighter));
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Mage));
-								break;
-								case 7:
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Fighter));
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Mage));
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Thief));
-								break;
-								case 8:
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Thief));
-								CurrentHero.Professions.Add(new Profession(0, HeroClass.Mage));
-								break;
-							}
-
-							CurrentState = CharGenStates.SelectAlignment;
+                            foreach (HeroClass cls in Enum.GetValues(typeof(HeroClass)))
+                            {
+                                if ((currentAllowedClasses[i] & cls) != 0)
+                                    CurrentHero.Professions.Add(new Profession(0, currentAllowedClasses[i]));
+                            }
+                            CurrentState = CharGenStates.SelectAlignment;
 						}
-
 
 						// Back
 						if (BackButton.Contains(Mouse.Location) && Mouse.IsNewButtonDown(MouseButtons.Left))
@@ -728,7 +697,9 @@ namespace DungeonEye
 
 					Point point = new Point(302, 0);
 					Color color;
-					for (int i = 0; i < 9; i++)
+
+                    var currentAllowedClasses = AllowedClass[CurrentHero.Race];
+                    for (int i = 0; i < currentAllowedClasses.Count(); i++)
 					{
 						point.Y = 160 + i * 18;
 
@@ -738,7 +709,8 @@ namespace DungeonEye
 						else
 							color = Color.White;
 
-						Batch.DrawString(Font, point, color, StringTable.GetString(i + 3));
+                        // TODO: Update string table to use localized strings
+                        Batch.DrawString(Font, point, color, currentAllowedClasses[i].ToString().ToUpper().Replace(", ", "/"));
 					}
 
 					// Back

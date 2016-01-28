@@ -61,7 +61,7 @@ namespace DungeonEye
 			Intelligence.Value = RollForAbility();
 			Wisdom.Value = RollForAbility();
 
-			HitPoint = new HitPoint(GameBase.Random.Next(6, 37));
+			HitPoint = new HitPoint(GameBase.Random.Next(6, 38));
 		}
 
 
